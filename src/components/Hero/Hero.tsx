@@ -102,60 +102,6 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Coluna Direita — Painel Editorial de Autoridade */}
-          <div className={styles.sideCol} aria-hidden="true">
-            <div className={styles.techPanel}>
-              {/* Header do painel */}
-              <div className={styles.panelHeader}>
-                <div className={styles.panelBadge}>
-                  <span className={styles.panelDot} aria-hidden="true" />
-                  <span>EDIÇÃO CONFIRMADA</span>
-                </div>
-                <span className={styles.panelDate}>01 e 02 OUT 2026</span>
-              </div>
-
-              {/* Destaque da Edição */}
-              <div className={styles.panelHighlight}>
-                <span className={styles.editionBadge}>24ª EDIÇÃO HISTÓRICA</span>
-                <h3 className={styles.panelTitle}>
-                  O principal fórum técnico de prevenção e SST do Rio Grande do Sul.
-                </h3>
-              </div>
-
-              {/* Grid de Métricas */}
-              <div className={styles.panelMetrics}>
-                <div className={styles.metricCard}>
-                  <strong className={styles.metricVal}>02</strong>
-                  <span className={styles.metricLbl}>Dias de Imersão</span>
-                </div>
-                <div className={styles.metricCard}>
-                  <strong className={styles.metricVal}>+17h</strong>
-                  <span className={styles.metricLbl}>Carga Horária</span>
-                </div>
-                <div className={styles.metricCard}>
-                  <strong className={styles.metricVal}>150</strong>
-                  <span className={styles.metricLbl}>Vagas Presenciais</span>
-                </div>
-                <div className={styles.metricCard}>
-                  <strong className={styles.metricVal}>3 KG</strong>
-                  <span className={styles.metricLbl}>Doação Solidária</span>
-                </div>
-              </div>
-
-              {/* Footer Institucional */}
-              <div className={styles.panelFooter}>
-                <div className={styles.infoRow}>
-                  <span className={styles.infoLabel}>Realização</span>
-                  <span className={styles.infoValue}>ARES — Eng. de Segurança</span>
-                </div>
-                <div className={styles.infoRow}>
-                  <span className={styles.infoLabel}>Local</span>
-                  <span className={styles.infoValue}>UCS CARVI · Bento Gonçalves</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
