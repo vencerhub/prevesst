@@ -30,20 +30,20 @@
   gap: var(--space-2);
 }
 
-.brandBadge {
-  font-size: var(--text-xs);
-  font-weight: var(--weight-bold);
-  color: var(--color-white);
-  background: var(--color-green);
-  padding: 2px 6px;
-  border-radius: var(--radius-sm);
+.footerLogoCard {
+  background: var(--color-white);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.brandName {
-  font-size: var(--text-xl);
-  font-weight: var(--weight-extrabold);
-  color: var(--color-white);
-  letter-spacing: var(--tracking-tight);
+.footerLogo {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .brandFullName {

@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { speakers, type Speaker } from '../../data/speakers';
 import styles from './Speakers.module.css';
 import { SpeakerModal } from './SpeakerModal';
@@ -71,12 +71,22 @@ export function Speakers() {
   const [activeDay, setActiveDay] = useState<1 | 2 | 'all'>('all');
   const [selectedSpeaker, setSelectedSpeaker] = useState<Speaker | null>(null);
 
-  const filtered = activeDay === 'all'
-    ? speakers
-    : speakers.filter(s => s.topicDay === activeDay);
+  const filtered = useMemo(() => {
+    return activeDay === 'all'
+      ? speakers
+      : speakers.filter(s => s.topicDay === activeDay);
+  }, [activeDay]);
+
+  const { row1, row2 } = useMemo(() => {
+    const mid = Math.ceil(filtered.length / 2);
+    const r1 = filtered.slice(0, mid);
+    const r2 = filtered.slice(mid);
+    const fill1 = r1.length > 0 ? (r1.length < 4 ? [...r1, ...r1] : r1) : filtered;
+    const fill2 = r2.length > 0 ? (r2.length < 4 ? [...r2, ...r2] : r2) : filtered;
+    return { row1: fill1, row2: fill2 };
+  }, [filtered]);
 
   const handleOpen = useCallback((speaker: Speaker) => {
-    // Analytics: speaker_open
     setSelectedSpeaker(speaker);
     document.body.style.overflow = 'hidden';
   }, []);
@@ -144,16 +154,36 @@ export function Speakers() {
             </button>
           ))}
         </div>
+      </div>
 
-        {/* Grid de cards */}
-        <div className={styles.grid} role="tabpanel" aria-label={`Palestrantes: ${activeDay}`}>
-          {filtered.map(speaker => (
-            <SpeakerCard
-              key={speaker.id}
-              speaker={speaker}
-              onClick={() => handleOpen(speaker)}
-            />
-          ))}
+      {/* Carrosseis Contínuos em Duas Fileiras */}
+      <div className={styles.carouselsContainer} role="region" aria-label="Carrossel contínuo de palestrantes">
+        {/* Fileira 1 — Rolagem contínua para esquerda */}
+        <div className={styles.marqueeRow}>
+          <div className={`${styles.marqueeTrack} ${styles.scrollLeft}`}>
+            {[...row1, ...row1].map((speaker, index) => (
+              <div key={`${speaker.id}-r1-${index}`} className={styles.cardWrapper}>
+                <SpeakerCard
+                  speaker={speaker}
+                  onClick={() => handleOpen(speaker)}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Fileira 2 — Rolagem contínua para direita */}
+        <div className={styles.marqueeRow}>
+          <div className={`${styles.marqueeTrack} ${styles.scrollRight}`}>
+            {[...row2, ...row2].map((speaker, index) => (
+              <div key={`${speaker.id}-r2-${index}`} className={styles.cardWrapper}>
+                <SpeakerCard
+                  speaker={speaker}
+                  onClick={() => handleOpen(speaker)}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

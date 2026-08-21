@@ -9,17 +9,17 @@
               border-color var(--transition-base),
               padding var(--transition-base),
               box-shadow var(--transition-base);
-  background-color: rgba(23, 26, 29, 0.85);
+  background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .headerScrolled {
-  background-color: rgba(23, 26, 29, 0.95);
+  background-color: rgba(255, 255, 255, 0.98);
   border-bottom-color: rgba(8, 122, 75, 0.25);
   padding-block: var(--space-3);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .inner {
@@ -35,6 +35,20 @@
   align-items: center;
   gap: var(--space-2);
   text-decoration: none;
+}
+
+.brandLogo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.drawerLogo {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .brandBadge {
@@ -57,14 +71,14 @@
   font-size: var(--text-lg);
   font-weight: var(--weight-extrabold);
   letter-spacing: var(--tracking-tight);
-  color: var(--color-white);
+  color: var(--color-graphite);
 }
 
 .brandYear {
   font-size: var(--text-xs);
   font-weight: var(--weight-bold);
-  color: var(--color-green-light);
-  opacity: 0.8;
+  color: var(--color-green);
+  opacity: 0.9;
 }
 
 /* ── Desktop Nav ── */
@@ -82,15 +96,15 @@
 
 .navLink {
   font-size: var(--text-sm);
-  font-weight: var(--weight-medium);
-  color: rgba(255, 255, 255, 0.75);
+  font-weight: var(--weight-semibold);
+  color: var(--color-slate);
   padding-block: var(--space-1);
   position: relative;
   transition: color var(--transition-fast);
 }
 
 .navLink:hover {
-  color: var(--color-white);
+  color: var(--color-green);
 }
 
 .navLink::after {
@@ -140,7 +154,7 @@
   display: block;
   width: 100%;
   height: 2px;
-  background-color: var(--color-white);
+  background-color: var(--color-graphite);
   border-radius: 2px;
   transition: transform var(--transition-base), opacity var(--transition-base);
 }
@@ -175,7 +189,7 @@
 .drawerBackdrop {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   transition: opacity var(--transition-base);
 }
@@ -191,14 +205,15 @@
   bottom: 0;
   width: 85%;
   max-width: 360px;
-  background-color: var(--color-graphite);
+  background-color: var(--color-white);
   padding: var(--space-6);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transform: translateX(100%);
   transition: transform var(--transition-base);
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid var(--color-border);
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.12);
 }
 
 .drawerOpen .drawerNav {
@@ -210,13 +225,14 @@
   align-items: center;
   justify-content: space-between;
   padding-bottom: var(--space-4);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .closeBtn {
   font-size: var(--text-xl);
-  color: var(--color-white);
+  color: var(--color-graphite);
   padding: var(--space-2);
+  line-height: 1;
 }
 
 .drawerLinks {
@@ -229,7 +245,7 @@
 .drawerLink {
   font-size: var(--text-lg);
   font-weight: var(--weight-semibold);
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--color-dark);
   transition: color var(--transition-fast);
 }
 
@@ -245,6 +261,6 @@
 
 .drawerMeta {
   font-size: var(--text-xs);
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-slate-mid);
   text-align: center;
 }

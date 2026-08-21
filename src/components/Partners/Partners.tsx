@@ -32,21 +32,6 @@ export function Partners() {
                   : <LogoPlaceholder key={p.id} name={p.name} />
               ))}
             </div>
-            <p className={styles.groupDesc}>{realizacao[0]?.fullName}</p>
-          </div>
-
-          <div className={styles.sep} aria-hidden="true" />
-
-          {/* ORGANIZAÇÃO */}
-          <div className={styles.group}>
-            <p className={styles.groupLabel}>Organização</p>
-            <div className={styles.logos}>
-              {organizacao.map(p => (
-                p.logo
-                  ? <img key={p.id} src={p.logo} alt={p.name} className={styles.logo} />
-                  : <LogoPlaceholder key={p.id} name={p.name} />
-              ))}
-            </div>
           </div>
 
           <div className={styles.sep} aria-hidden="true" />
@@ -56,6 +41,20 @@ export function Partners() {
             <p className={styles.groupLabel}>Patrocínio</p>
             <div className={styles.logos}>
               {patrocinio.map(p => (
+                p.logo
+                  ? <img key={p.id} src={p.logo} alt={p.name} className={`${styles.logo} ${styles.sponsorLogo}`} />
+                  : <LogoPlaceholder key={p.id} name={p.name} />
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.sep} aria-hidden="true" />
+
+          {/* ORGANIZAÇÃO */}
+          <div className={styles.group}>
+            <p className={styles.groupLabel}>Organização</p>
+            <div className={styles.logos}>
+              {organizacao.map(p => (
                 p.logo
                   ? <img key={p.id} src={p.logo} alt={p.name} className={styles.logo} />
                   : <LogoPlaceholder key={p.id} name={p.name} />

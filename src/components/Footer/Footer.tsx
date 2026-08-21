@@ -40,8 +40,13 @@ export function Footer() {
         {/* Marca & Institucional */}
         <div className={styles.brand}>
           <div className={styles.brandHeader}>
-            <span className={styles.brandBadge}>24º</span>
-            <span className={styles.brandName}>PREVESST</span>
+            <div className={styles.footerLogoCard}>
+              <img
+                src="/images/logos/prevesst.png"
+                alt="24º PREVESST 2026"
+                className={styles.footerLogo}
+              />
+            </div>
           </div>
           <p className={styles.brandFullName}>
             {eventConfig.subtitle}

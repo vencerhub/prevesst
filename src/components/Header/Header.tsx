@@ -43,11 +43,11 @@ export function Header() {
       <div className={`container ${styles.inner}`}>
         {/* Brand */}
         <a href="#" className={styles.brand} aria-label="24º PREVESST 2026 — Início">
-          <span className={styles.brandBadge}>24º</span>
-          <div className={styles.brandTextGroup}>
-            <span className={styles.brandName}>PREVESST</span>
-            <span className={styles.brandYear}>2026</span>
-          </div>
+          <img
+            src="/images/logos/prevesst.png"
+            alt="24º PREVESST 2026"
+            className={styles.brandLogo}
+          />
         </a>
 
         {/* Desktop Nav */}
@@ -99,10 +99,13 @@ export function Header() {
         <div className={styles.drawerBackdrop} onClick={() => setMenuOpen(false)} />
         <nav className={styles.drawerNav} aria-label="Menu móvel">
           <div className={styles.drawerHeader}>
-            <div className={styles.brand}>
-              <span className={styles.brandBadge}>24º</span>
-              <span className={styles.brandName}>PREVESST</span>
-            </div>
+            <a href="#" className={styles.brand} onClick={() => setMenuOpen(false)} aria-label="24º PREVESST 2026">
+              <img
+                src="/images/logos/prevesst.png"
+                alt="24º PREVESST 2026"
+                className={styles.drawerLogo}
+              />
+            </a>
             <button
               className={styles.closeBtn}
               onClick={() => setMenuOpen(false)}

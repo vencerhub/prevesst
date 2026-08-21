@@ -68,17 +68,81 @@
   background: var(--color-green-deep);
 }
 
-/* ── Grid ── */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+/* ── Carrosseis Contínuos ── */
+.carouselsContainer {
+  display: flex;
+  flex-direction: column;
   gap: var(--space-6);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
+  padding-block: var(--space-3);
+}
+
+.marqueeRow {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+.marqueeTrack {
+  display: flex;
+  gap: var(--space-6);
+  width: max-content;
+  will-change: transform;
+}
+
+.scrollLeft {
+  animation: scrollLeftMarquee 55s linear infinite;
+}
+
+.scrollRight {
+  animation: scrollRightMarquee 55s linear infinite;
+}
+
+.marqueeRow:hover .marqueeTrack {
+  animation-play-state: paused;
+}
+
+.cardWrapper {
+  flex: 0 0 290px;
+  width: 290px;
+}
+
+@media (min-width: 768px) {
+  .cardWrapper {
+    flex: 0 0 320px;
+    width: 320px;
+  }
+}
+
+@keyframes scrollLeftMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollRightMarquee {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /* ── Card ── */
 .card {
   display: flex;
   flex-direction: column;
+  height: 100%;
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);

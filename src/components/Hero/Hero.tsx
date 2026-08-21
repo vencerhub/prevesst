@@ -36,10 +36,16 @@ export function Hero() {
 
             {/* Identidade do Evento */}
             <div className={styles.titleGroup}>
-              <div className={styles.editionRow}>
-                <span className={styles.editionNumber}>24º</span>
-                <span className={styles.eventName}>PREVESST</span>
+              <div className={styles.heroLogoCard}>
+                <img
+                  src="/images/logos/prevesst.png"
+                  alt="24º PREVESST 2026"
+                  className={styles.heroLogo}
+                />
               </div>
+              <h1 className="sr-only">
+                24º PREVESST 2026 — Encontro Sul-Rio-Grandense de Prevenção, Segurança e Saúde do Trabalho
+              </h1>
               <p className={styles.eventSubtitle}>
                 {eventConfig.subtitle}
               </p>

@@ -24,7 +24,7 @@ export const partners: Partner[] = [
     fullName: 'ARES — Associação Sul-Rio-Grandense de Engenharia de Segurança do Trabalho',
     role: 'realizacao',
     roleLabel: 'Realização',
-    logo: null, // TODO: inserir logo da ARES
+    logo: '/images/logos/ARES.png',
     website: undefined,
     description: 'Associação Sul-Rio-Grandense de Engenharia de Segurança do Trabalho',
   },
@@ -34,16 +34,16 @@ export const partners: Partner[] = [
     fullName: 'Dimiski Eventos',
     role: 'organizacao',
     roleLabel: 'Organização',
-    logo: null, // TODO: inserir logo da Dimiski Eventos
+    logo: '/images/logos/Dimiski.png',
     website: undefined,
   },
   {
     id: 'confea',
-    name: 'Confea',
+    name: 'Confea / CREA-RS / Mútua-RS',
     fullName: 'Conselho Federal de Engenharia e Agronomia — Confea',
     role: 'patrocinio',
     roleLabel: 'Patrocínio',
-    logo: null, // TODO: inserir logo do Confea
+    logo: '/images/logos/ConfeaCreaMutua_horizontal_cor-positivo.png',
     website: undefined,
     // ATENÇÃO: O Confea aparece EXCLUSIVAMENTE como patrocinador.
     // Não utilizar textos que caracterizem o Confea como organizador ou realizador.
