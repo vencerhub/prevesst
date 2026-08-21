@@ -6,8 +6,16 @@ export function MobileStickyCTA() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const handler = () => setVisible(window.scrollY > 550);
+    const handler = () => {
+      const ticketsEl = document.getElementById('ingressos');
+      const ticketsRect = ticketsEl?.getBoundingClientRect();
+      const inTickets = ticketsRect && ticketsRect.top < window.innerHeight && ticketsRect.bottom > 0;
+      const scrollY = window.scrollY;
+      setVisible(scrollY > 500 && !inTickets);
+    };
+
     window.addEventListener('scroll', handler, { passive: true });
+    handler();
     return () => window.removeEventListener('scroll', handler);
   }, []);
 

@@ -12,10 +12,18 @@ interface Props {
 export function SpeakerModal({ speaker, onClose, onRegistration }: Props) {
   const closeBtnRef = useRef<HTMLButtonElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
 
-  // Focar no botão fechar ao abrir
+  // Focar no botão fechar ao abrir e restaurar ao fechar + scroll lock
   useEffect(() => {
+    previousFocusRef.current = document.activeElement as HTMLElement;
     closeBtnRef.current?.focus();
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = '';
+      previousFocusRef.current?.focus();
+    };
   }, []);
 
   // Trap focus
@@ -29,6 +37,10 @@ export function SpeakerModal({ speaker, onClose, onRegistration }: Props) {
     const last = focusable[focusable.length - 1];
 
     const handler = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+        return;
+      }
       if (e.key !== 'Tab') return;
       if (e.shiftKey) {
         if (document.activeElement === first) { e.preventDefault(); last.focus(); }
@@ -39,7 +51,7 @@ export function SpeakerModal({ speaker, onClose, onRegistration }: Props) {
 
     document.addEventListener('keydown', handler);
     return () => document.removeEventListener('keydown', handler);
-  }, []);
+  }, [onClose]);
 
   const isDev = import.meta.env.DEV;
 

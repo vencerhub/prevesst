@@ -1,6 +1,6 @@
 .finalCta {
   position: relative;
-  background-color: var(--color-green-deep);
+  background: var(--gradient-cta);
   padding-block: var(--space-20);
   overflow: hidden;
 }
@@ -87,4 +87,17 @@
 .metaLbl {
   font-size: 11px;
   color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 480px) {
+  .metaBox {
+    flex-direction: column;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+  }
+
+  .actionCol a {
+    width: 100%;
+    justify-content: center;
+  }
 }

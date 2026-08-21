@@ -6,6 +6,7 @@
   right: 0;
   z-index: var(--z-float);
   padding: var(--space-3) var(--space-4);
+  padding-bottom: calc(var(--space-3) + env(safe-area-inset-bottom, 0px));
   background: rgba(23, 26, 29, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);

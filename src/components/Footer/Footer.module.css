@@ -1,6 +1,6 @@
 .footer {
-  background-color: var(--color-graphite);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--gradient-footer);
+  border-top: 1px solid rgba(8, 122, 75, 0.25);
 }
 
 .inner {

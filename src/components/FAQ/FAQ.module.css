@@ -122,3 +122,15 @@
   color: var(--color-slate);
   line-height: var(--leading-relaxed);
 }
+
+@media (max-width: 640px) {
+  .question {
+    padding: var(--space-4);
+    font-size: var(--text-sm);
+  }
+
+  .answerInner p {
+    padding: 0 var(--space-4) var(--space-4);
+    font-size: var(--text-sm);
+  }
+}

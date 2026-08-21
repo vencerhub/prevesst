@@ -1,12 +1,12 @@
 .btn {
   position: fixed;
-  bottom: 90px; /* above mobile sticky CTA */
-  right: var(--space-5);
-  z-index: var(--z-float);
+  bottom: calc(82px + env(safe-area-inset-bottom, 0px)); /* acima do sticky CTA mobile */
+  right: var(--space-4);
+  z-index: calc(var(--z-float) - 1);
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  padding: var(--space-3) var(--space-5);
+  padding: var(--space-3) var(--space-4);
   background: #25D366;
   color: var(--color-white);
   border-radius: var(--radius-full);
@@ -16,6 +16,7 @@
   font-size: var(--text-sm);
   text-decoration: none;
   white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn:hover {

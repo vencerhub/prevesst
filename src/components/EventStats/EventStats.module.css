@@ -1,18 +1,18 @@
 .bar {
-  background-color: var(--color-dark);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--gradient-stats);
+  border-bottom: 1px solid rgba(8, 122, 75, 0.25);
   padding-block: var(--space-6);
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
 }
 
-@media (min-width: 640px) {
+@media (max-width: 340px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 }
 
@@ -25,9 +25,9 @@
 
 .item {
   display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  padding: var(--space-3) var(--space-4);
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3);
   border-left: 2px solid var(--color-green);
   background: rgba(255, 255, 255, 0.02);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;

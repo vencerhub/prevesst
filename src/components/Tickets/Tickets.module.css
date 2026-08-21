@@ -50,6 +50,12 @@
   position: relative;
 }
 
+@media (max-width: 480px) {
+  .ticketCard {
+    padding: var(--space-5) var(--space-4);
+  }
+}
+
 @media (min-width: 640px) {
   .ticketCard {
     padding: var(--space-10);

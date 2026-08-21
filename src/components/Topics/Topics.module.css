@@ -1,5 +1,6 @@
 .topics {
   background-color: var(--color-bg);
+  padding-bottom: var(--space-12);
 }
 
 .header {
@@ -63,14 +64,15 @@
 }
 
 .cardHighlight {
-  background: var(--color-graphite);
+  background: linear-gradient(145deg, #052D1E 0%, #084830 100%);
   color: var(--color-white);
-  border-color: var(--color-green);
-  box-shadow: var(--shadow-md);
+  border-color: var(--color-green-mid);
+  box-shadow: 0 8px 24px rgba(8, 122, 75, 0.2);
 }
 
 .cardHighlight:hover {
-  border-color: var(--color-green-mid);
+  border-color: var(--color-green);
+  box-shadow: 0 12px 28px rgba(8, 122, 75, 0.28);
 }
 
 .cardHeader {

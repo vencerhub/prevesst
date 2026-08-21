@@ -102,56 +102,55 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Coluna Direita — Painel Técnico Editorial de Autoridade */}
+          {/* Coluna Direita — Painel Editorial de Autoridade */}
           <div className={styles.sideCol} aria-hidden="true">
             <div className={styles.techPanel}>
-              {/* Header do painel técnico */}
+              {/* Header do painel */}
               <div className={styles.panelHeader}>
-                <span className={styles.panelCode}>SPEC // PREVESST-2026</span>
-                <span className={styles.panelStatus}>CONFIRMADO</span>
+                <div className={styles.panelBadge}>
+                  <span className={styles.panelDot} aria-hidden="true" />
+                  <span>EDIÇÃO CONFIRMADA</span>
+                </div>
+                <span className={styles.panelDate}>01 e 02 OUT 2026</span>
               </div>
 
               {/* Destaque da Edição */}
-              <div className={styles.panelHeroStat}>
-                <div className={styles.editionBig}>
-                  <span>24</span>
-                  <small>ª</small>
-                </div>
-                <div className={styles.editionDesc}>
-                  <strong>EDIÇÃO HISTÓRICA</strong>
-                  <span>Consolidando a cultura de SST e prevenção no Rio Grande do Sul</span>
-                </div>
+              <div className={styles.panelHighlight}>
+                <span className={styles.editionBadge}>24ª EDIÇÃO HISTÓRICA</span>
+                <h3 className={styles.panelTitle}>
+                  O principal fórum técnico de prevenção e SST do Rio Grande do Sul.
+                </h3>
               </div>
 
-              {/* Grid de Métricas Técnicas */}
+              {/* Grid de Métricas */}
               <div className={styles.panelMetrics}>
-                <div className={styles.metricCell}>
-                  <span className={styles.metricVal}>02</span>
+                <div className={styles.metricCard}>
+                  <strong className={styles.metricVal}>02</strong>
                   <span className={styles.metricLbl}>Dias de Imersão</span>
                 </div>
-                <div className={styles.metricCell}>
-                  <span className={styles.metricVal}>+17h</span>
-                  <span className={styles.metricLbl}>Grade Técnica</span>
+                <div className={styles.metricCard}>
+                  <strong className={styles.metricVal}>+17h</strong>
+                  <span className={styles.metricLbl}>Carga Horária</span>
                 </div>
-                <div className={styles.metricCell}>
-                  <span className={styles.metricVal}>150</span>
-                  <span className={styles.metricLbl}>Vagas Exclusivas</span>
+                <div className={styles.metricCard}>
+                  <strong className={styles.metricVal}>150</strong>
+                  <span className={styles.metricLbl}>Vagas Presenciais</span>
                 </div>
-                <div className={styles.metricCell}>
-                  <span className={styles.metricVal}>3 KG</span>
-                  <span className={styles.metricLbl}>Alimento Solidário</span>
+                <div className={styles.metricCard}>
+                  <strong className={styles.metricVal}>3 KG</strong>
+                  <span className={styles.metricLbl}>Doação Solidária</span>
                 </div>
               </div>
 
-              {/* Bloco de Realização / Autoridade */}
+              {/* Footer Institucional */}
               <div className={styles.panelFooter}>
-                <div className={styles.institutionTag}>
-                  <span>REALIZAÇÃO</span>
-                  <strong>ARES — Eng. de Segurança do Trabalho</strong>
+                <div className={styles.infoRow}>
+                  <span className={styles.infoLabel}>Realização</span>
+                  <span className={styles.infoValue}>ARES — Eng. de Segurança</span>
                 </div>
-                <div className={styles.institutionTag}>
-                  <span>LOCAL</span>
-                  <strong>UCS CARVI · Serra Gaúcha</strong>
+                <div className={styles.infoRow}>
+                  <span className={styles.infoLabel}>Local</span>
+                  <span className={styles.infoValue}>UCS CARVI · Bento Gonçalves</span>
                 </div>
               </div>
             </div>

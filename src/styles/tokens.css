@@ -6,20 +6,29 @@
 :root {
   /* ── Verdes (cor principal da identidade) ── */
   --color-green:        #087A4B;   /* verde principal — CTAs, marca, destaques */
-  --color-green-deep:   #064E36;   /* verde profundo — hero, footer, fundos premium */
+  --color-green-deep:   #064E36;   /* verde profundo — fundos premium */
   --color-green-mid:    #0A9A5E;   /* verde médio — hover, ícones ativos */
   --color-green-light:  #E8F3ED;   /* verde claro — backgrounds sutis, cards selecionados */
+  --color-green-dark:   #073524;   /* verde escuro nobre */
+  --color-green-night:  #041E15;   /* verde escuro noturno para fundos principais */
   --color-green-muted:  rgba(8, 122, 75, 0.1);
   --color-green-border: rgba(8, 122, 75, 0.2);
 
+  /* ── Degradês Verdes Nobres ── */
+  --gradient-hero:       linear-gradient(160deg, #05261A 0%, #073524 45%, #041E15 100%);
+  --gradient-dark:       linear-gradient(145deg, #041D14 0%, #073424 50%, #05261B 100%);
+  --gradient-stats:      linear-gradient(90deg, #041E15 0%, #073122 50%, #041E15 100%);
+  --gradient-cta:        linear-gradient(140deg, #053826 0%, #085A3C 50%, #042E1F 100%);
+  --gradient-footer:     linear-gradient(180deg, #052317 0%, #03160F 100%);
+
   /* ── Grafite / Neutros ── */
   --color-graphite:    #171A1D;
-  --color-dark:        #1E2328;
+  --color-dark:        #073122;
   --color-slate:       #353C44;
   --color-slate-mid:   #5D6369;
   --color-muted:       #8A9199;
   --color-border:      #E2E5E9;
-  --color-border-dark: #252B31;
+  --color-border-dark: #0D4732;
 
   /* ── Fundos ── */
   --color-bg:          #F6F7F5;   /* off-white levemente quente */

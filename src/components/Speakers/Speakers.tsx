@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useRevealOnScroll } from '../../hooks/useRevealOnScroll';
 import { speakers, type Speaker } from '../../data/speakers';
 import styles from './Speakers.module.css';
 import { SpeakerModal } from './SpeakerModal';
@@ -68,6 +69,7 @@ function SpeakerCard({
 }
 
 export function Speakers() {
+  const ref = useRevealOnScroll<HTMLElement>();
   const [activeDay, setActiveDay] = useState<1 | 2 | 'all'>('all');
   const [selectedSpeaker, setSelectedSpeaker] = useState<Speaker | null>(null);
 
@@ -115,44 +117,46 @@ export function Speakers() {
   return (
     <section
       id="palestrantes"
+      ref={ref}
       className={`section section--alt ${styles.speakers}`}
       aria-labelledby="speakers-heading"
     >
       <div className="container">
-        <div className={styles.header}>
-          <p className="eyebrow eyebrow--line reveal">Quem estará no PREVESST</p>
-          <h2 id="speakers-heading" className={`${styles.heading} reveal reveal-delay-1`}>
-            Especialistas e profissionais convidados
-          </h2>
-          <p className={`${styles.lead} reveal reveal-delay-2`}>
-            Profissionais com experiência de campo, pesquisa e atuação normativa compartilhando
-            perspectivas sobre os desafios atuais da Segurança e Saúde no Trabalho.
-          </p>
-
-          {isDev && (
-            <p className={styles.devNote}>
-              ⚠️ Palestrantes com badge "PROVISÓRIO" são conteúdo fictício. TODO: substituir antes da publicação.
+        <div className={styles.topBar}>
+          <div className={styles.header}>
+            <p className="eyebrow eyebrow--line">QUEM ESTARÁ NO 24º PREVESST</p>
+            <h2 id="speakers-heading" className={styles.heading}>
+              Especialistas e Lideranças Técnicas de SST
+            </h2>
+            <p className={styles.lead}>
+              Profissionais de referência, peritos e auditores compartilhando atualizações práticas sobre NRs, Riscos Psicossociais e Engenharia de Prevenção.
             </p>
-          )}
-        </div>
 
-        {/* Filtros por dia */}
-        <div className={styles.filters} role="tablist" aria-label="Filtrar palestrantes por dia">
-          {[
-            { key: 'all' as const, label: 'Todos os palestrantes' },
-            { key: 1 as const, label: 'Dia 01 — 01/10' },
-            { key: 2 as const, label: 'Dia 02 — 02/10' },
-          ].map(filter => (
-            <button
-              key={filter.key}
-              className={`${styles.filterBtn} ${activeDay === filter.key ? styles.filterActive : ''}`}
-              onClick={() => setActiveDay(filter.key)}
-              role="tab"
-              aria-selected={activeDay === filter.key}
-            >
-              {filter.label}
-            </button>
-          ))}
+            {isDev && (
+              <p className={styles.devNote}>
+                ⚠️ Palestrantes com badge "PROVISÓRIO" são fictícios para validação de layout.
+              </p>
+            )}
+          </div>
+
+          {/* Filtros por dia */}
+          <div className={styles.filters} role="tablist" aria-label="Filtrar palestrantes por dia">
+            {[
+              { key: 'all' as const, label: 'Todos' },
+              { key: 1 as const, label: 'Dia 01 (01/10)' },
+              { key: 2 as const, label: 'Dia 02 (02/10)' },
+            ].map(filter => (
+              <button
+                key={filter.key}
+                className={`${styles.filterBtn} ${activeDay === filter.key ? styles.filterActive : ''}`}
+                onClick={() => setActiveDay(filter.key)}
+                role="tab"
+                aria-selected={activeDay === filter.key}
+              >
+                {filter.label}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
