@@ -1,0 +1,35 @@
+.btn {
+  position: fixed;
+  bottom: 90px; /* above mobile sticky CTA */
+  right: var(--space-5);
+  z-index: var(--z-float);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  background: #25D366;
+  color: var(--color-white);
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-sm);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+}
+
+.btn:active { transform: scale(0.98); }
+
+.label {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .btn { bottom: var(--space-6); }
+  .label { display: inline; }
+}

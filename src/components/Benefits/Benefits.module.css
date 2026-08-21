@@ -1,0 +1,92 @@
+.benefits {
+  background-color: var(--color-green-deep);
+  position: relative;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 640px;
+  margin-bottom: var(--space-12);
+}
+
+.heading {
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+  font-weight: var(--weight-extrabold);
+  color: var(--color-white);
+  line-height: var(--leading-tight);
+}
+
+.lead {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ── Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-10);
+}
+
+.card {
+  padding: var(--space-6);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: background-color var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
+}
+
+.card:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.icon {
+  color: var(--color-green-light);
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.cardTitle {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
+}
+
+.cardText {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.65);
+  line-height: var(--leading-relaxed);
+}
+
+/* ── Disclaimer ── */
+.disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.6);
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  background: rgba(0, 0, 0, 0.15);
+  max-width: 680px;
+}
+
+.disclaimer svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-green-light);
+}
+
+.disclaimer strong {
+  color: var(--color-white);
+}

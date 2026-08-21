@@ -1,0 +1,239 @@
+/**
+ * PREVESST — Programação do Evento
+ * DIA 01 — 01/10/2026
+ * DIA 02 — 02/10/2026
+ */
+
+export type SessionType = 'talk' | 'opening' | 'debate' | 'break' | 'social' | 'registration' | 'institutional';
+
+export interface ScheduleSession {
+  id: string;
+  time: string;
+  timeEnd?: string;
+  title: string;
+  type: SessionType;
+  speakerId?: string; // referência ao id em speakers.ts
+  description?: string;
+}
+
+export interface ScheduleDay {
+  day: 1 | 2;
+  date: string;
+  displayDate: string;
+  label: string;
+  sessions: ScheduleSession[];
+}
+
+export const schedule: ScheduleDay[] = [
+  {
+    day: 1,
+    date: '2026-10-01',
+    displayDate: '01/10',
+    label: 'DIA 01',
+    sessions: [
+      {
+        id: 'd1-01',
+        time: '08h00',
+        title: 'Credenciamento',
+        type: 'registration',
+      },
+      {
+        id: 'd1-02',
+        time: '08h30',
+        title: 'Palestra Institucional Confea',
+        type: 'institutional',
+      },
+      {
+        id: 'd1-03',
+        time: '09h00',
+        timeEnd: '09h30',
+        title: 'Abertura do 24º PREVESST',
+        type: 'opening',
+      },
+      {
+        id: 'd1-04',
+        time: '09h30',
+        timeEnd: '10h30',
+        title: 'FRPS e Assédio no Trabalho: uma visão e procedimentos da CNI',
+        type: 'talk',
+        speakerId: 'speaker-01',
+        description: 'Visão estratégica dos fatores de riscos psicossociais e assédio no ambiente laboral sob a perspectiva da Confederação Nacional da Indústria.',
+      },
+      {
+        id: 'd1-05',
+        time: '10h30',
+        timeEnd: '11h30',
+        title: 'FRPS e NR-1: uma visão e procedimentos da SRTE/RS',
+        type: 'talk',
+        speakerId: 'speaker-02',
+        description: 'Como a Superintendência Regional do Trabalho e Emprego do RS interpreta e fiscaliza os riscos psicossociais no contexto da NR-1 revisada.',
+      },
+      {
+        id: 'd1-06',
+        time: '11h30',
+        timeEnd: '12h00',
+        title: 'Questionamentos e debates',
+        type: 'debate',
+      },
+      {
+        id: 'd1-07',
+        time: '12h00',
+        timeEnd: '13h30',
+        title: 'Almoço',
+        type: 'break',
+        description: 'Intervalo para almoço — não incluso na inscrição.',
+      },
+      {
+        id: 'd1-08',
+        time: '13h30',
+        timeEnd: '14h30',
+        title: 'Engenharia Invisível que Salva Vidas',
+        type: 'talk',
+        speakerId: 'speaker-03',
+        description: 'Como as decisões de engenharia, invisíveis ao olho do trabalhador, determinam a segurança real dos ambientes e processos industriais.',
+      },
+      {
+        id: 'd1-09',
+        time: '14h30',
+        timeEnd: '15h30',
+        title: 'FRPS: influência em Acidentes de Trabalho na NR-12 — Equipamentos Fixos',
+        type: 'talk',
+        speakerId: 'speaker-04',
+        description: 'Análise da relação entre fatores de risco psicossocial e acidentes envolvendo máquinas e equipamentos fixos, à luz da NR-12.',
+      },
+      {
+        id: 'd1-10',
+        time: '15h30',
+        timeEnd: '16h30',
+        title: 'FRPS: influência em Acidentes de Trabalho na NR-12 — Equipamentos Móveis',
+        type: 'talk',
+        speakerId: 'speaker-05',
+        description: 'Estudo dos riscos psicossociais como fator contribuinte para acidentes com equipamentos móveis e veículos industriais.',
+      },
+      {
+        id: 'd1-11',
+        time: '16h30',
+        timeEnd: '17h30',
+        title: 'FRPS junto aos Bombeiros Civis: problemas relacionados à NR-12 — Casos Práticos',
+        type: 'talk',
+        speakerId: 'speaker-06',
+        description: 'Casos reais de acidentes envolvendo brigadas de emergência e a influência dos fatores psicossociais nas operações de combate a incêndio.',
+      },
+      {
+        id: 'd1-12',
+        time: '17h30',
+        timeEnd: '18h00',
+        title: 'Questionamentos e debates',
+        type: 'debate',
+      },
+      {
+        id: 'd1-13',
+        time: '18h00',
+        title: 'Coquetel de encerramento do dia',
+        type: 'social',
+        description: 'Momento de networking e integração entre participantes — incluso na inscrição.',
+      },
+    ],
+  },
+  {
+    day: 2,
+    date: '2026-10-02',
+    displayDate: '02/10',
+    label: 'DIA 02',
+    sessions: [
+      {
+        id: 'd2-01',
+        time: '09h30',
+        timeEnd: '10h30',
+        title: 'NR-33 x REPM e Equipamentos de Movimentação',
+        type: 'talk',
+        speakerId: 'speaker-07',
+        description: 'Interseção entre espaços confinados (NR-33), equipamentos de movimentação e as novas exigências do REPM — análise técnica e prática.',
+      },
+      {
+        id: 'd2-02',
+        time: '10h30',
+        timeEnd: '11h30',
+        title: 'Travamento de Fontes de Energias',
+        type: 'talk',
+        speakerId: 'speaker-08',
+        description: 'Procedimentos de Lockout/Tagout e controle de energias perigosas: boas práticas, falhas comuns e conformidade normativa.',
+      },
+      {
+        id: 'd2-03',
+        time: '11h30',
+        timeEnd: '12h00',
+        title: 'Questionamentos e debates',
+        type: 'debate',
+      },
+      {
+        id: 'd2-04',
+        time: '12h00',
+        timeEnd: '13h30',
+        title: 'Almoço',
+        type: 'break',
+        description: 'Intervalo para almoço — não incluso na inscrição.',
+      },
+      {
+        id: 'd2-05',
+        time: '13h30',
+        timeEnd: '14h00',
+        title: 'FRPS: Adoece também em Ambientes da Saúde?',
+        type: 'talk',
+        speakerId: 'speaker-09',
+        description: 'O impacto dos fatores psicossociais em profissionais de saúde: burnout, adoecimento e estratégias de prevenção em hospitais e clínicas.',
+      },
+      {
+        id: 'd2-06',
+        time: '14h00',
+        timeEnd: '14h40',
+        title: 'FRPS na Visão da Medicina do Trabalho',
+        type: 'talk',
+        speakerId: 'speaker-10',
+        description: 'Como o médico do trabalho identifica, documenta e age diante dos fatores de risco psicossocial — diagnóstico, nexo e intervenção.',
+      },
+      {
+        id: 'd2-07',
+        time: '14h40',
+        timeEnd: '15h20',
+        title: 'Boa Ventilação Minimiza os FRPS? Como?',
+        type: 'talk',
+        speakerId: 'speaker-11',
+        description: 'Qualidade do ar, temperatura, iluminação e conforto ambiental como fatores de modulação dos riscos psicossociais.',
+      },
+      {
+        id: 'd2-08',
+        time: '15h20',
+        timeEnd: '16h00',
+        title: 'Questionamentos e debates',
+        type: 'debate',
+      },
+      {
+        id: 'd2-09',
+        time: '16h00',
+        timeEnd: '16h40',
+        title: 'Nova NR 10: integração com GRO, NR 1 e demais NRs',
+        type: 'talk',
+        speakerId: 'speaker-12',
+        description: 'O novo texto da NR-10 e sua articulação com o Gerenciamento de Riscos Ocupacionais (GRO), NR-1 e o sistema normativo vigente.',
+      },
+      {
+        id: 'd2-10',
+        time: '16h40',
+        timeEnd: '17h20',
+        title: 'Na Visão de Ex-Comandante do CBMRS: Como Combater Sinistros em Veículos Elétricos',
+        type: 'talk',
+        speakerId: 'speaker-13',
+        description: 'Desafios operacionais e táticos no combate a incêndios em veículos elétricos — experiência de campo e recomendações para brigadas.',
+      },
+      {
+        id: 'd2-11',
+        time: '17h20',
+        timeEnd: '18h00',
+        title: 'Debate e encerramento com entrega dos certificados',
+        type: 'social',
+        description: 'Mesa redonda final e cerimônia de encerramento com entrega dos certificados de participação.',
+      },
+    ],
+  },
+];

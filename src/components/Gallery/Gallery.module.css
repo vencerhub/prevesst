@@ -1,0 +1,49 @@
+.gallery {
+  background: var(--color-bg);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 720px;
+  margin-bottom: var(--space-8);
+}
+
+.heading {
+  font-size: clamp(var(--text-2xl), 3.5vw, var(--text-4xl));
+  font-weight: var(--weight-extrabold);
+  line-height: var(--leading-tight);
+}
+
+.lead {
+  font-size: var(--text-lg);
+  color: var(--color-slate-mid);
+}
+
+/* ── Vídeo Institucional ── */
+.videoWrapper {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.videoContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-graphite);
+}
+
+.iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+

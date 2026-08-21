@@ -1,0 +1,290 @@
+.schedule {
+  background-color: var(--color-bg);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+  max-width: 680px;
+}
+
+.heading {
+  font-size: clamp(var(--text-2xl), 3.5vw, var(--text-4xl));
+  font-weight: var(--weight-extrabold);
+  line-height: var(--leading-tight);
+}
+
+.accent {
+  color: var(--color-green);
+}
+
+.lead {
+  font-size: var(--text-lg);
+  color: var(--color-slate-mid);
+}
+
+/* ── Tabs ── */
+.tabs {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space-4) var(--space-6);
+  margin-bottom: -2px;
+  border-bottom: 3px solid transparent;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  gap: 2px;
+}
+
+.tab:hover .tabDay {
+  color: var(--color-graphite);
+}
+
+.tabActive {
+  border-bottom-color: var(--color-green);
+}
+
+.tabDay {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--color-slate-mid);
+  letter-spacing: var(--tracking-tight);
+  transition: color var(--transition-fast);
+}
+
+.tabActive .tabDay {
+  color: var(--color-green);
+}
+
+.tabDate {
+  font-size: var(--text-xs);
+  color: var(--color-slate-mid);
+  font-weight: var(--weight-medium);
+}
+
+.tabActive .tabDate {
+  color: var(--color-graphite);
+  font-weight: var(--weight-semibold);
+}
+
+/* ── Session list ── */
+.sessionList {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-6);
+}
+
+/* ── Session row ── */
+.session {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  align-items: start;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  background: var(--color-white);
+  transition: background-color var(--transition-fast);
+}
+
+@media (max-width: 639px) {
+  .session {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+  }
+  .sessionTime {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .sessionMain {
+    grid-row: 2;
+    grid-column: 1;
+  }
+  .expandBtn {
+    grid-row: 1;
+    grid-column: 2;
+    align-self: start;
+  }
+}
+
+.session:hover {
+  background: var(--color-bg);
+}
+
+/* Time styles */
+.sessionTime {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+.timeStart {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  color: var(--color-graphite);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.timeSep {
+  color: var(--color-slate-mid);
+  font-size: var(--text-xs);
+}
+
+.timeEnd {
+  font-size: var(--text-xs);
+  color: var(--color-slate-mid);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Session main */
+.sessionMain {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.sessionHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.typeTag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  width: fit-content;
+}
+
+.sessionTitle {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--color-graphite);
+  line-height: var(--leading-snug);
+}
+
+.sessionDesc {
+  display: none;
+}
+
+.sessionDesc.expanded {
+  display: block;
+}
+
+.sessionDesc p {
+  font-size: var(--text-sm);
+  color: var(--color-slate);
+  line-height: var(--leading-relaxed);
+  padding-top: var(--space-2);
+}
+
+/* Expand button */
+.expandBtn {
+  color: var(--color-slate-mid);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.expandBtn:hover {
+  color: var(--color-graphite);
+  background: var(--color-bg-alt);
+}
+
+/* ── Session Types ── */
+.typeTalk {
+  border-left: 3px solid var(--color-green);
+}
+
+.typeOpening {
+  border-left: 3px solid var(--color-green-deep);
+  background: rgba(8, 122, 75, 0.04);
+}
+
+.typeDebate {
+  border-left: 3px solid #2B6CB0;
+  background: rgba(43, 108, 176, 0.03);
+}
+
+.typeBreak {
+  border-left: 3px solid var(--color-border);
+  background: var(--color-bg-alt);
+  opacity: 0.85;
+}
+
+.typeSocial {
+  border-left: 3px solid var(--color-green);
+  background: var(--color-green-light);
+}
+
+.typeRegistration {
+  border-left: 3px solid var(--color-slate-mid);
+  background: var(--color-bg-alt);
+  opacity: 0.85;
+}
+
+.typeInstitutional {
+  border-left: 3px solid var(--color-green-mid);
+}
+
+/* Type tags styling */
+.typeTalk .typeTag { background: var(--color-green-light); color: var(--color-green); }
+.typeOpening .typeTag { background: rgba(6, 78, 54, 0.1); color: var(--color-green-deep); }
+.typeDebate .typeTag { background: rgba(43, 108, 176, 0.1); color: #2B6CB0; }
+.typeBreak .typeTag { background: var(--color-bg-alt); color: var(--color-slate-mid); }
+.typeSocial .typeTag { background: var(--color-green-light); color: var(--color-green); }
+.typeRegistration .typeTag { background: var(--color-bg-alt); color: var(--color-slate-mid); }
+.typeInstitutional .typeTag { background: var(--color-green-light); color: var(--color-green); }
+
+/* ── Note ── */
+.note {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-slate);
+  background: var(--color-white);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.note svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--color-green);
+}

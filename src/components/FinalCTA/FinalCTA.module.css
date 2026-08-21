@@ -1,0 +1,90 @@
+.finalCta {
+  position: relative;
+  background-color: var(--color-green-deep);
+  padding-block: var(--space-20);
+  overflow: hidden;
+}
+
+.bgGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 80% 50%, rgba(8, 122, 75, 0.35) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-8);
+}
+
+@media (min-width: 1024px) {
+  .content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-16);
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 640px;
+}
+
+.heading {
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+  font-weight: var(--weight-extrabold);
+  color: var(--color-white);
+  line-height: var(--leading-snug);
+}
+
+.sub {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.actionCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .actionCol {
+    width: auto;
+    align-items: flex-end;
+  }
+}
+
+.metaBox {
+  display: flex;
+  gap: var(--space-6);
+  padding: var(--space-4) var(--space-6);
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metaVal {
+  font-size: var(--text-base);
+  font-weight: var(--weight-extrabold);
+  color: var(--color-white);
+  font-family: monospace;
+}
+
+.metaLbl {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+}

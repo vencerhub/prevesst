@@ -1,0 +1,132 @@
+.about {
+  background-color: var(--color-graphite);
+  position: relative;
+  overflow: hidden;
+}
+
+.topLayout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  margin-bottom: var(--space-16);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (min-width: 1024px) {
+  .topLayout {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--space-16);
+    align-items: end;
+  }
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.heading {
+  font-size: clamp(var(--text-2xl), 4vw, var(--text-4xl));
+  font-weight: var(--weight-extrabold);
+  line-height: var(--leading-tight);
+  color: var(--color-white);
+}
+
+.accent {
+  color: var(--color-green-light);
+  font-weight: var(--weight-extrabold);
+}
+
+.editorial {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.leadText {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.9);
+  line-height: var(--leading-relaxed);
+}
+
+.leadText strong {
+  color: var(--color-green);
+}
+
+.bodyText {
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.6);
+  line-height: var(--leading-relaxed);
+}
+
+/* ── Grid Editorial de Pilares ── */
+.pillarsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+@media (min-width: 640px) {
+  .pillarsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pillarsGrid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+  }
+}
+
+.pillarItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform var(--transition-base), border-color var(--transition-base), background-color var(--transition-base);
+}
+
+.pillarItem:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(8, 122, 75, 0.3);
+}
+
+.pillarHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.pillarCode {
+  font-size: var(--text-sm);
+  font-family: monospace;
+  font-weight: var(--weight-bold);
+  color: var(--color-green);
+}
+
+.pillarLine {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  flex: 1;
+}
+
+.pillarTitle {
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  color: var(--color-white);
+  line-height: var(--leading-snug);
+}
+
+.pillarDesc {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.55);
+  line-height: var(--leading-relaxed);
+}
