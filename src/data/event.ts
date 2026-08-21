@@ -68,12 +68,12 @@ export const eventConfig = {
       message:
         'Olá! Vim pelo site do 24º PREVESST e gostaria de mais informações sobre o evento.',
     },
-    instagram: 'https://www.instagram.com/ares.eng.seguranca/',
+    instagram: 'https://www.instagram.com/ares.poa',
     email: null,
   },
 
   social: {
-    instagram: 'https://www.instagram.com/ares.eng.seguranca/',
+    instagram: 'https://www.instagram.com/ares.poa',
   },
 
   legal: {

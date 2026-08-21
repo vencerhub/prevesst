@@ -109,7 +109,7 @@ export function Footer() {
             className={styles.contactItem}
           >
             <strong>Instagram</strong>
-            <span>@ares.eng.seguranca</span>
+            <span>@ares.poa</span>
           </a>
         </div>
       </div>
