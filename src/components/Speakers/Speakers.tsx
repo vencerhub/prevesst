@@ -107,7 +107,7 @@ export function Speakers() {
   }, [handleClose]);
 
   const handleRegistration = (e: React.MouseEvent) => {
-    if (eventConfig.registration.general === '#inscricao') {
+    if ((eventConfig.registration.general as string).startsWith('#')) {
       e.preventDefault();
       handleClose();
       document.getElementById('ingressos')?.scrollIntoView({ behavior: 'smooth' });

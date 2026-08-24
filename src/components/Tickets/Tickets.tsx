@@ -23,7 +23,7 @@ export function Tickets() {
   const ref = useRevealOnScroll<HTMLElement>();
 
   const handleRegistrationClick = (e: React.MouseEvent) => {
-    if (eventConfig.registration.general === '#inscricao') {
+    if ((eventConfig.registration.general as string).startsWith('#')) {
       e.preventDefault();
       const whatsappUrl = `https://wa.me/${eventConfig.contact.whatsapp.number}?text=${encodeURIComponent('Olá! Gostaria de realizar minha inscrição solidária para o 24º PREVESST em Bento Gonçalves.')}`;
       window.open(whatsappUrl, '_blank');
@@ -79,12 +79,14 @@ export function Tickets() {
             <div className={styles.cardAction}>
               <a
                 href={eventConfig.registration.general}
+                target={eventConfig.registration.general.startsWith('http') ? '_blank' : undefined}
+                rel={eventConfig.registration.general.startsWith('http') ? 'noopener noreferrer' : undefined}
                 className="btn btn--primary btn--lg"
                 style={{ width: '100%', justifyContent: 'center' }}
                 onClick={handleRegistrationClick}
-                aria-label="Garantir minha vaga no 24º PREVESST"
+                aria-label="Garantir minha vaga no 24º PREVESST pelo Even3"
               >
-                Garantir Minha Vaga
+                Garantir Minha Vaga no Even3
               </a>
               <p className={styles.actionNote}>
                 ⚡ Vagas limitadas à capacidade de 150 participantes.

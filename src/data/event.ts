@@ -36,8 +36,10 @@ export const eventConfig = {
 
   registration: {
     // Inscrição solidária para todos (tradição gratuita/solidária das edições PREVESST)
-    general: '#inscricao',
-    member: '#inscricao',
+    general:
+      'https://www.even3.com.br/tickets/get/24-prevesst-prevencao-seguranca-do-trabalho-e-fatores-de-riscos-psicossociais-773264?even3_orig=get_tickets',
+    member:
+      'https://www.even3.com.br/tickets/get/24-prevesst-prevencao-seguranca-do-trabalho-e-fatores-de-riscos-psicossociais-773264?even3_orig=get_tickets',
     requirement: '3 kg de alimentos não perecíveis',
     isSolidary: true,
   },
@@ -69,7 +71,7 @@ export const eventConfig = {
         'Olá! Vim pelo site do 24º PREVESST e gostaria de mais informações sobre o evento.',
     },
     instagram: 'https://www.instagram.com/ares.poa',
-    email: null,
+    email: '24prevesst@gmail.com',
   },
 
   social: {

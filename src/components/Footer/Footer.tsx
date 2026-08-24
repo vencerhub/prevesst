@@ -111,6 +111,15 @@ export function Footer() {
             <strong>Instagram</strong>
             <span>@ares.poa</span>
           </a>
+          {eventConfig.contact.email && (
+            <a
+              href={`mailto:${eventConfig.contact.email}`}
+              className={styles.contactItem}
+            >
+              <strong>E-mail Oficial</strong>
+              <span>{eventConfig.contact.email}</span>
+            </a>
+          )}
         </div>
       </div>
 

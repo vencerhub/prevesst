@@ -127,6 +127,8 @@ export function SpeakerModal({ speaker, onClose, onRegistration }: Props) {
         <div className={styles.footer}>
           <a
             href={eventConfig.registration.general}
+            target={eventConfig.registration.general.startsWith('http') ? '_blank' : undefined}
+            rel={eventConfig.registration.general.startsWith('http') ? 'noopener noreferrer' : undefined}
             className="btn btn--primary"
             onClick={onRegistration}
           >

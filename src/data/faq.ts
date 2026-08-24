@@ -63,6 +63,6 @@ export const faqItems: FAQItem[] = [
     id: 'faq-10',
     question: 'Como tirar dúvidas adicionais?',
     answer:
-      'Você pode entrar em contato direto com a organização pelo WhatsApp oficial: +55 (51) 98692-0633 ou através do Instagram da ARES (@ares.eng.seguranca).',
+      'Você pode entrar em contato direto com a organização pelo WhatsApp oficial: +55 (51) 98692-0633, pelo e-mail 24prevesst@gmail.com ou através do Instagram da ARES (@ares.poa).',
   },
 ];
