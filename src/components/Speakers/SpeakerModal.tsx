@@ -53,8 +53,6 @@ export function SpeakerModal({ speaker, onClose, onRegistration }: Props) {
     return () => document.removeEventListener('keydown', handler);
   }, [onClose]);
 
-  const isDev = import.meta.env.DEV;
-
   return (
     <div
       className={styles.overlay}
@@ -82,9 +80,7 @@ export function SpeakerModal({ speaker, onClose, onRegistration }: Props) {
 
           {/* Identificação */}
           <div className={styles.identity}>
-            {isDev && speaker.isPlaceholder && (
-              <span className="badge badge--placeholder">CONTEÚDO PROVISÓRIO</span>
-            )}
+            <span className="badge badge--green">EM BREVE</span>
             <div className={styles.tags}>
               {speaker.tags.map(tag => (
                 <span key={tag} className="badge badge--red">{tag}</span>

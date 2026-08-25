@@ -5,8 +5,6 @@ import styles from './Speakers.module.css';
 import { SpeakerModal } from './SpeakerModal';
 import { eventConfig } from '../../data/event';
 
-const isDev = import.meta.env.DEV;
-
 function SpeakerCard({
   speaker,
   onClick,
@@ -23,12 +21,10 @@ function SpeakerCard({
       role="button"
       aria-label={`Ver perfil de ${speaker.name}`}
     >
-      {/* Badge de placeholder apenas em dev */}
-      {isDev && speaker.isPlaceholder && (
-        <span className="badge badge--placeholder" title="Conteúdo provisório — substituir antes da publicação">
-          PROVISÓRIO
-        </span>
-      )}
+      {/* Badge de status */}
+      <span className="badge badge--green">
+        EM BREVE
+      </span>
 
       {/* Foto */}
       <div className={styles.photo}>
@@ -129,14 +125,8 @@ export function Speakers() {
               Especialistas e Lideranças Técnicas de SST
             </h2>
             <p className={styles.lead}>
-              Profissionais de referência, peritos e auditores compartilhando atualizações práticas sobre NRs, Riscos Psicossociais e Engenharia de Prevenção.
+              Profissionais de referência, peritos e auditores compartilhando atualizações práticas sobre NRs, Riscos Psicossociais e Engenharia de Prevenção. Os nomes confirmados serão anunciados em breve.
             </p>
-
-            {isDev && (
-              <p className={styles.devNote}>
-                ⚠️ Palestrantes com badge "PROVISÓRIO" são fictícios para validação de layout.
-              </p>
-            )}
           </div>
 
           {/* Filtros por dia */}

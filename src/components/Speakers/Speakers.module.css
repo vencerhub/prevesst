@@ -37,16 +37,6 @@
   color: var(--color-slate-mid);
 }
 
-.devNote {
-  font-size: var(--text-xs);
-  color: #7a6000;
-  background: var(--color-yellow-muted);
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-sm);
-  border-left: 3px solid var(--color-yellow);
-  width: fit-content;
-}
-
 /* ── Filtros ── */
 .filters {
   display: flex;
