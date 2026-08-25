@@ -84,9 +84,9 @@ export function Tickets() {
                 className="btn btn--primary btn--lg"
                 style={{ width: '100%', justifyContent: 'center' }}
                 onClick={handleRegistrationClick}
-                aria-label="Garantir minha vaga no 24º PREVESST pelo Even3"
+                aria-label="Garantir minha vaga no 24º PREVESST"
               >
-                Garantir Minha Vaga no Even3
+                Garantir Minha Vaga
               </a>
               <p className={styles.actionNote}>
                 ⚡ Vagas limitadas à capacidade de 150 participantes.
