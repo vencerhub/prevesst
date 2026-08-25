@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { eventConfig } from '../../data/event';
+import { LegalModal } from '../LegalModal/LegalModal';
 import styles from './Footer.module.css';
 
 const navLinks = [
@@ -31,6 +33,7 @@ function WhatsAppIcon() {
 }
 
 export function Footer() {
+  const [legalModal, setLegalModal] = useState<'privacy' | 'terms' | null>(null);
   const whatsappUrl = `https://wa.me/${eventConfig.contact.whatsapp.number}?text=${encodeURIComponent(eventConfig.contact.whatsapp.message)}`;
   const year = new Date().getFullYear();
 
@@ -131,13 +134,34 @@ export function Footer() {
               © {year} 24º PREVESST · ARES. Todos os direitos reservados.
             </p>
             <div className={styles.legal}>
-              <span>Inscrição Solidária (3 kg de alimentos)</span>
+              <button
+                type="button"
+                className={styles.legalBtn}
+                onClick={() => setLegalModal('privacy')}
+              >
+                Política de Privacidade
+              </button>
+              <span>·</span>
+              <button
+                type="button"
+                className={styles.legalBtn}
+                onClick={() => setLegalModal('terms')}
+              >
+                Termos de Uso
+              </button>
               <span>·</span>
               <span>150 Vagas Presenciais</span>
             </div>
           </div>
         </div>
       </div>
+
+      {legalModal && (
+        <LegalModal
+          type={legalModal}
+          onClose={() => setLegalModal(null)}
+        />
+      )}
     </footer>
   );
 }
