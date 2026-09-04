@@ -57,6 +57,28 @@ export function Venue() {
                 Recomenda-se realizar o credenciamento cedo no primeiro dia para retirada do kit e entrega dos 3 kg de alimentos solidários.
               </span>
             </div>
+
+            {/* Hospedagem & Benefício */}
+            <div className={styles.hotelCard}>
+              <div className={styles.hotelHeader}>
+                <span className="badge badge--green">HOSPEDAGEM</span>
+                <span className={styles.hotelDiscount}>10% DE DESCONTO</span>
+              </div>
+              <p className={styles.hotelText}>
+                Participantes do 24º PREVESST contam com <strong>10% de desconto</strong> em hospedagem na <strong>Rede de Hotéis Dall'Onder</strong>, além de tarifas especiais em transfers e passeios com a <strong>QueTal Turismo</strong>.
+              </p>
+              <a
+                href="https://wa.me/5554996642285?text=Ol%C3%A1%2C%20vou%20participar%20do%2024%C2%BA%20PREVESST%20e%20gostaria%20de%20solicitar%20o%20desconto%20de%20hospedagem."
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.hotelLink}
+              >
+                <span>Condições via WhatsApp: (54) 99664-2285</span>
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+            </div>
           </div>
 
           {/* Painel do Mapa */}

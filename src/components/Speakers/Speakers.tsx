@@ -1,29 +1,21 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useRevealOnScroll } from '../../hooks/useRevealOnScroll';
 import { speakers, type Speaker } from '../../data/speakers';
 import styles from './Speakers.module.css';
-import { SpeakerModal } from './SpeakerModal';
-import { eventConfig } from '../../data/event';
 
 function SpeakerCard({
   speaker,
-  onClick,
 }: {
   speaker: Speaker;
-  onClick: () => void;
 }) {
   return (
     <article
       className={styles.card}
-      onClick={onClick}
-      onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && onClick()}
-      tabIndex={0}
-      role="button"
-      aria-label={`Ver perfil de ${speaker.name}`}
+      aria-label={`Palestrante ${speaker.name}`}
     >
       {/* Badge de status */}
-      <span className="badge badge--green">
-        EM BREVE
+      <span className={`badge ${speaker.photo ? 'badge--green' : 'badge--muted'}`}>
+        {speaker.photo ? 'CONFIRMADO' : 'EM BREVE'}
       </span>
 
       {/* Foto */}
@@ -38,9 +30,6 @@ function SpeakerCard({
             </svg>
           </div>
         )}
-        <div className={styles.photoOverlay}>
-          <span className={styles.photoOverlayText}>Ver perfil</span>
-        </div>
       </div>
 
       {/* Info */}
@@ -67,7 +56,6 @@ function SpeakerCard({
 export function Speakers() {
   const ref = useRevealOnScroll<HTMLElement>();
   const [activeDay, setActiveDay] = useState<1 | 2 | 'all'>('all');
-  const [selectedSpeaker, setSelectedSpeaker] = useState<Speaker | null>(null);
 
   const filtered = useMemo(() => {
     return activeDay === 'all'
@@ -84,32 +72,6 @@ export function Speakers() {
     return { row1: fill1, row2: fill2 };
   }, [filtered]);
 
-  const handleOpen = useCallback((speaker: Speaker) => {
-    setSelectedSpeaker(speaker);
-    document.body.style.overflow = 'hidden';
-  }, []);
-
-  const handleClose = useCallback(() => {
-    setSelectedSpeaker(null);
-    document.body.style.overflow = '';
-  }, []);
-
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') handleClose();
-    };
-    document.addEventListener('keydown', handler);
-    return () => document.removeEventListener('keydown', handler);
-  }, [handleClose]);
-
-  const handleRegistration = (e: React.MouseEvent) => {
-    if ((eventConfig.registration.general as string).startsWith('#')) {
-      e.preventDefault();
-      handleClose();
-      document.getElementById('ingressos')?.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section
       id="palestrantes"
@@ -125,7 +87,7 @@ export function Speakers() {
               Especialistas e Lideranças Técnicas de SST
             </h2>
             <p className={styles.lead}>
-              Profissionais de referência, peritos e auditores compartilhando atualizações práticas sobre NRs, Riscos Psicossociais e Engenharia de Prevenção. Os nomes confirmados serão anunciados em breve.
+              Profissionais de referência, especialistas e lideranças técnicas compartilhando atualizações práticas sobre NRs, Riscos Psicossociais e Engenharia de Prevenção.
             </p>
           </div>
 
@@ -159,7 +121,6 @@ export function Speakers() {
               <div key={`${speaker.id}-r1-${index}`} className={styles.cardWrapper}>
                 <SpeakerCard
                   speaker={speaker}
-                  onClick={() => handleOpen(speaker)}
                 />
               </div>
             ))}
@@ -173,22 +134,12 @@ export function Speakers() {
               <div key={`${speaker.id}-r2-${index}`} className={styles.cardWrapper}>
                 <SpeakerCard
                   speaker={speaker}
-                  onClick={() => handleOpen(speaker)}
                 />
               </div>
             ))}
           </div>
         </div>
       </div>
-
-      {/* Modal */}
-      {selectedSpeaker && (
-        <SpeakerModal
-          speaker={selectedSpeaker}
-          onClose={handleClose}
-          onRegistration={handleRegistration}
-        />
-      )}
     </section>
   );
 }

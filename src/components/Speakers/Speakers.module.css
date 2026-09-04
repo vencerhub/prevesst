@@ -192,20 +192,14 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  cursor: pointer;
+  cursor: default;
   transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
   position: relative;
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--color-green);
-}
-
-.card:focus-visible {
-  outline: 3px solid var(--color-green);
-  outline-offset: 2px;
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-dark, #cbd5e1);
 }
 
 .card > .badge {
@@ -218,7 +212,7 @@
 /* Photo */
 .photo {
   position: relative;
-  aspect-ratio: 4/3;
+  aspect-ratio: 1 / 1;
   background: var(--color-bg-alt);
   overflow: hidden;
 }
@@ -230,10 +224,6 @@
   transition: transform var(--transition-slow);
 }
 
-.card:hover .photo img {
-  transform: scale(1.04);
-}
-
 .photoPlaceholder {
   width: 100%;
   height: 100%;
@@ -242,32 +232,6 @@
   justify-content: center;
   color: var(--color-muted);
   background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-border) 100%);
-}
-
-.photoOverlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(23, 26, 29, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity var(--transition-base);
-}
-
-.card:hover .photoOverlay {
-  opacity: 1;
-}
-
-.photoOverlayText {
-  font-size: var(--text-xs);
-  font-weight: var(--weight-bold);
-  color: var(--color-white);
-  letter-spacing: var(--tracking-wider);
-  text-transform: uppercase;
-  background: var(--color-green);
-  padding: 6px 14px;
-  border-radius: var(--radius-sm);
 }
 
 /* Info */

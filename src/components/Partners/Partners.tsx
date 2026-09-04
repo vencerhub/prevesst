@@ -62,6 +62,18 @@ export function Partners() {
             </div>
           </div>
         </div>
+
+        {/* APOIO INSTITUCIONAL */}
+        <div className={styles.apoioSection}>
+          <p className={styles.groupLabel}>Apoio</p>
+          <div className={styles.apoioWrapper}>
+            <img
+              src="/images/logos/Apoio.png"
+              alt="Apoio Institucional"
+              className={styles.apoioLogo}
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

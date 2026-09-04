@@ -113,3 +113,34 @@
   padding: 1px 6px;
   border-radius: 3px;
 }
+
+/* ── Apoio ── */
+.apoioSection {
+  margin-top: var(--space-8);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.apoioWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.apoioLogo {
+  max-width: 100%;
+  width: auto;
+  max-height: 140px;
+  object-fit: contain;
+  transition: transform var(--transition-fast);
+}
+
+.apoioLogo:hover {
+  transform: scale(1.02);
+}

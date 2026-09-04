@@ -80,7 +80,9 @@ export function SpeakerModal({ speaker, onClose, onRegistration }: Props) {
 
           {/* Identificação */}
           <div className={styles.identity}>
-            <span className="badge badge--green">EM BREVE</span>
+            <span className={`badge ${speaker.photo ? 'badge--green' : 'badge--muted'}`}>
+              {speaker.photo ? 'CONFIRMADO' : 'EM BREVE'}
+            </span>
             <div className={styles.tags}>
               {speaker.tags.map(tag => (
                 <span key={tag} className="badge badge--red">{tag}</span>

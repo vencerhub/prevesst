@@ -65,4 +65,10 @@ export const faqItems: FAQItem[] = [
     answer:
       'Você pode entrar em contato direto com a organização pelo WhatsApp oficial: +55 (51) 98692-0633, pelo e-mail 24prevesst@gmail.com ou através do Instagram da ARES (@ares.poa).',
   },
+  {
+    id: 'faq-11',
+    question: 'Há desconto ou benefício para hospedagem em Bento Gonçalves?',
+    answer:
+      'Sim! Os participantes do 24º PREVESST têm 10% de desconto exclusivo em hospedagem na Rede de Hotéis Dall\'Onder, além de tarifas especiais em transfers, ingressos e passeios pela agência QueTal Dall\'Onder Turismo. Para aproveitar a condição especial, entre em contato via WhatsApp com a agência: (54) 99664-2285.',
+  },
 ];
