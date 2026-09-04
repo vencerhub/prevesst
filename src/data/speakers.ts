@@ -149,13 +149,13 @@ export const speakers: Speaker[] = [
   },
   {
     id: 'speaker-10',
-    name: 'A definir',
+    name: 'Dr. Thiago José Dal Bosco',
     role: 'Médico do Trabalho',
-    institution: 'Medicina do Trabalho',
+    institution: 'UFRGS · CFM/ANAMT',
     topic: 'FRPS na Visão da Medicina do Trabalho',
     topicDay: 2,
-    bio: 'Médico do Trabalho com foco em diagnóstico, nexo causal e acompanhamento clínico dos fatores de risco psicossocial.',
-    photo: null,
+    bio: 'Médico formado pela UFRGS, especialista em Medicina do Trabalho pelo CFM/ANAMT.',
+    photo: '/images/speakers/10. FRPS na Visão da Medicina do Trabalho/Thiago José Dal Bosco.jpeg',
     tags: ['Medicina do Trabalho', 'FRPS', 'Saúde Ocupacional'],
   },
   {
