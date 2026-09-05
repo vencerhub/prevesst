@@ -182,13 +182,13 @@ export const speakers: Speaker[] = [
   },
   {
     id: 'speaker-13',
-    name: 'A definir',
-    role: 'Oficial da Reserva / Especialista em Sinistros',
+    name: 'Engº Civil Adriano Krukoski Ferreira',
+    role: 'Engº Civil e Bacharel em Ciências Jurídicas Militar',
     institution: 'Ex-Comandante do CBMRS',
     topic: 'Na Visão de Ex-Comandante do CBMRS: Como Combater Sinistros em Veículos Elétricos',
     topicDay: 2,
-    bio: 'Oficial experiente em doutrina operacional de combate a incêndios e resposta a emergências com baterias e veículos elétricos.',
-    photo: null,
+    bio: 'Engenheiro Civil, Bacharel em Ciências Jurídicas Militar e Oficial da Reserva / Ex-Comandante do CBMRS, experiente em doutrina operacional de combate a incêndios e resposta a emergências com baterias e veículos elétricos.',
+    photo: '/images/speakers/14. Na Visão de Ex-Comandante do CBMRS_ Como Combater Sinistros em Veículos Elétricos/Engº Civil Adriano Krukoski Ferreira.jpeg',
     tags: ['Veículos Elétricos', 'Sinistros', 'CBMRS'],
   },
 ];

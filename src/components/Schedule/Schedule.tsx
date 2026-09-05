@@ -51,6 +51,16 @@ function SessionRow({ session }: { session: ScheduleSession }) {
           <h4 className={styles.sessionTitle}>{session.title}</h4>
         </div>
 
+        {session.speaker && (
+          <div className={styles.sessionSpeaker}>
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="8" cy="5" r="3" stroke="currentColor" strokeWidth="1.5" />
+              <path d="M2 14c0-2.5 2.5-4 6-4s6 1.5 6 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+            <span>{session.speaker}</span>
+          </div>
+        )}
+
         {session.description && (
           <div className={`${styles.sessionDesc} ${expanded ? styles.expanded : ''}`}>
             <p>{session.description}</p>

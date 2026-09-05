@@ -195,6 +195,24 @@
   line-height: var(--leading-snug);
 }
 
+.sessionSpeaker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-green-deep);
+  background: rgba(8, 122, 75, 0.06);
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  width: fit-content;
+}
+
+.sessionSpeaker svg {
+  flex-shrink: 0;
+  color: var(--color-green);
+}
+
 .sessionDesc {
   display: none;
 }

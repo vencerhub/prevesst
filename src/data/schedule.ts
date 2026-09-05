@@ -13,6 +13,7 @@ export interface ScheduleSession {
   title: string;
   type: SessionType;
   speakerId?: string; // referência ao id em speakers.ts
+  speaker?: string;
   description?: string;
 }
 
@@ -57,6 +58,7 @@ export const schedule: ScheduleDay[] = [
         title: 'FRPS e Assédio no Trabalho: uma visão e procedimentos da CNI',
         type: 'talk',
         speakerId: 'speaker-01',
+        speaker: 'A definir (CNI)',
         description: 'Visão estratégica dos fatores de riscos psicossociais e assédio no ambiente laboral sob a perspectiva da Confederação Nacional da Indústria.',
       },
       {
@@ -66,6 +68,7 @@ export const schedule: ScheduleDay[] = [
         title: 'FRPS e NR-1: uma visão e procedimentos da SRTE/RS',
         type: 'talk',
         speakerId: 'speaker-02',
+        speaker: 'A definir (SRTE/RS)',
         description: 'Como a Superintendência Regional do Trabalho e Emprego do RS interpreta e fiscaliza os riscos psicossociais no contexto da NR-1 revisada.',
       },
       {
@@ -90,6 +93,7 @@ export const schedule: ScheduleDay[] = [
         title: 'Engenharia Invisível que Salva Vidas',
         type: 'talk',
         speakerId: 'speaker-03',
+        speaker: 'Engº Alexandre Eberle Alves',
         description: 'Como as decisões de engenharia, invisíveis ao olho do trabalhador, determinam a segurança real dos ambientes e processos industriais.',
       },
       {
@@ -99,6 +103,7 @@ export const schedule: ScheduleDay[] = [
         title: 'FRPS: influência em Acidentes de Trabalho na NR-12 — Equipamentos Fixos',
         type: 'talk',
         speakerId: 'speaker-04',
+        speaker: 'Vladimir Kuse',
         description: 'Análise da relação entre fatores de risco psicossocial e acidentes envolvendo máquinas e equipamentos fixos, à luz da NR-12.',
       },
       {
@@ -108,6 +113,7 @@ export const schedule: ScheduleDay[] = [
         title: 'FRPS: influência em Acidentes de Trabalho na NR-12 — Equipamentos Móveis',
         type: 'talk',
         speakerId: 'speaker-05',
+        speaker: 'Engº Jairo Brasil',
         description: 'Estudo dos riscos psicossociais como fator contribuinte para acidentes com equipamentos móveis e veículos industriais.',
       },
       {
@@ -117,6 +123,7 @@ export const schedule: ScheduleDay[] = [
         title: 'FRPS junto aos Bombeiros Civis: problemas relacionados à NR-12 — Casos Práticos',
         type: 'talk',
         speakerId: 'speaker-06',
+        speaker: 'A definir (Bombeiros Civis)',
         description: 'Casos reais de acidentes envolvendo brigadas de emergência e a influência dos fatores psicossociais nas operações de combate a incêndio.',
       },
       {
@@ -148,6 +155,7 @@ export const schedule: ScheduleDay[] = [
         title: 'NR-33 x REPM e Equipamentos de Movimentação',
         type: 'talk',
         speakerId: 'speaker-07',
+        speaker: 'Engª Vivian Giacomelli Corrêa e Engº Luiz Francisco Pedroso Lopes',
         description: 'Interseção entre espaços confinados (NR-33), equipamentos de movimentação e as novas exigências do REPM — análise técnica e prática.',
       },
       {
@@ -157,6 +165,7 @@ export const schedule: ScheduleDay[] = [
         title: 'Travamento de Fontes de Energias',
         type: 'talk',
         speakerId: 'speaker-08',
+        speaker: 'Engº Ricardo Alberto Fernández, Lisiane Frydrych e Victor Lopes Santos',
         description: 'Procedimentos de Lockout/Tagout e controle de energias perigosas: boas práticas, falhas comuns e conformidade normativa.',
       },
       {
@@ -181,6 +190,7 @@ export const schedule: ScheduleDay[] = [
         title: 'FRPS: Adoece também em Ambientes da Saúde?',
         type: 'talk',
         speakerId: 'speaker-09',
+        speaker: 'A definir',
         description: 'O impacto dos fatores psicossociais em profissionais de saúde: burnout, adoecimento e estratégias de prevenção em hospitais e clínicas.',
       },
       {
@@ -190,6 +200,7 @@ export const schedule: ScheduleDay[] = [
         title: 'FRPS na Visão da Medicina do Trabalho',
         type: 'talk',
         speakerId: 'speaker-10',
+        speaker: 'Dr. Thiago José Dal Bosco',
         description: 'Como o médico do trabalho identifica, documenta e age diante dos fatores de risco psicossocial — diagnóstico, nexo e intervenção.',
       },
       {
@@ -199,6 +210,7 @@ export const schedule: ScheduleDay[] = [
         title: 'Boa Ventilação Minimiza os FRPS? Como?',
         type: 'talk',
         speakerId: 'speaker-11',
+        speaker: 'A definir',
         description: 'Qualidade do ar, temperatura, iluminação e conforto ambiental como fatores de modulação dos riscos psicossociais.',
       },
       {
@@ -215,6 +227,7 @@ export const schedule: ScheduleDay[] = [
         title: 'Nova NR 10: integração com GRO, NR 1 e demais NRs',
         type: 'talk',
         speakerId: 'speaker-12',
+        speaker: 'Eng. Eletric. Jéferson Oliveira',
         description: 'O novo texto da NR-10 e sua articulação com o Gerenciamento de Riscos Ocupacionais (GRO), NR-1 e o sistema normativo vigente.',
       },
       {
@@ -224,6 +237,7 @@ export const schedule: ScheduleDay[] = [
         title: 'Na Visão de Ex-Comandante do CBMRS: Como Combater Sinistros em Veículos Elétricos',
         type: 'talk',
         speakerId: 'speaker-13',
+        speaker: 'Engº Civil Adriano Krukoski Ferreira',
         description: 'Desafios operacionais e táticos no combate a incêndios em veículos elétricos — experiência de campo e recomendações para brigadas.',
       },
       {
