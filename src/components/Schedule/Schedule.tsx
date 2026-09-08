@@ -20,8 +20,8 @@ function sessionTypeLabel(type: SessionType): string {
     talk: 'Palestra',
     opening: 'Solenidade de Abertura',
     debate: 'Mesa Redonda / Debate',
-    break: 'Intervalo / Almoço',
-    social: 'Coquetel de Integração',
+    break: 'Intervalo / Coffee Break',
+    social: 'Encerramento Oficial',
     registration: 'Credenciamento',
     institutional: 'Atividade Institucional',
   };
