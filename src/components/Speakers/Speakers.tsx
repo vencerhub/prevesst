@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import { useRevealOnScroll } from '../../hooks/useRevealOnScroll';
 import { speakers, type Speaker } from '../../data/speakers';
 import styles from './Speakers.module.css';
@@ -50,6 +50,136 @@ function SpeakerCard({
         <p className={styles.topicText}>{speaker.topic}</p>
       </div>
     </article>
+  );
+}
+
+interface CarouselRowProps {
+  speakers: Speaker[];
+  direction: 'left' | 'right';
+  rowId: string;
+  speed?: number;
+}
+
+function CarouselRow({ speakers, direction, rowId, speed = 0.6 }: CarouselRowProps) {
+  const rowRef = useRef<HTMLDivElement>(null);
+  const isPausedRef = useRef(false);
+  const animationFrameRef = useRef<number | null>(null);
+
+  const displayItems = useMemo(() => {
+    if (speakers.length === 0) return [];
+    let list = [...speakers];
+    while (list.length < 8) {
+      list = [...list, ...speakers];
+    }
+    return [...list, ...list, ...list];
+  }, [speakers]);
+
+  useEffect(() => {
+    const container = rowRef.current;
+    if (!container) return;
+
+    if (direction === 'right' && container.scrollLeft === 0) {
+      container.scrollLeft = container.scrollWidth / 3;
+    }
+
+    let lastTime = performance.now();
+
+    const step = (time: number) => {
+      const delta = Math.min((time - lastTime) / 1000, 0.1);
+      lastTime = time;
+
+      if (!isPausedRef.current && container) {
+        const oneThird = container.scrollWidth / 3;
+        const moveDistance = speed * 60 * delta;
+
+        if (direction === 'left') {
+          container.scrollLeft += moveDistance;
+          if (container.scrollLeft >= oneThird * 2) {
+            container.scrollLeft -= oneThird;
+          }
+        } else {
+          container.scrollLeft -= moveDistance;
+          if (container.scrollLeft <= 0) {
+            container.scrollLeft += oneThird;
+          }
+        }
+      }
+
+      animationFrameRef.current = requestAnimationFrame(step);
+    };
+
+    animationFrameRef.current = requestAnimationFrame(step);
+
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, [direction, speed, displayItems]);
+
+  const handleNav = (navDir: 'prev' | 'next') => {
+    const container = rowRef.current;
+    if (!container) return;
+
+    const cardEl = container.querySelector(`.${styles.cardWrapper}`);
+    const cardWidth = cardEl ? cardEl.clientWidth : 320;
+    const gap = 24;
+    const shift = (cardWidth + gap) * (navDir === 'next' ? 1 : -1);
+
+    container.scrollBy({
+      left: shift,
+      behavior: 'smooth',
+    });
+  };
+
+  return (
+    <div className={styles.rowWrapper}>
+      {/* Botão Anterior */}
+      <button
+        type="button"
+        className={`${styles.navButton} ${styles.navButtonPrev}`}
+        onClick={() => handleNav('prev')}
+        aria-label={`Rolar palestrantes da ${rowId} para a esquerda`}
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+
+      {/* Faixa do Carrossel */}
+      <div
+        ref={rowRef}
+        className={styles.marqueeRow}
+        onMouseEnter={() => { isPausedRef.current = true; }}
+        onMouseLeave={() => { isPausedRef.current = false; }}
+        onTouchStart={() => { isPausedRef.current = true; }}
+        onTouchEnd={() => {
+          setTimeout(() => {
+            isPausedRef.current = false;
+          }, 1500);
+        }}
+      >
+        <div className={styles.marqueeTrack}>
+          {displayItems.map((speaker, index) => (
+            <div key={`${speaker.id}-${rowId}-${index}`} className={styles.cardWrapper}>
+              <SpeakerCard speaker={speaker} />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Botão Próximo */}
+      <button
+        type="button"
+        className={`${styles.navButton} ${styles.navButtonNext}`}
+        onClick={() => handleNav('next')}
+        aria-label={`Rolar palestrantes da ${rowId} para a direita`}
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+    </div>
   );
 }
 
@@ -115,30 +245,20 @@ export function Speakers() {
       {/* Carrosseis Contínuos em Duas Fileiras */}
       <div className={styles.carouselsContainer} role="region" aria-label="Carrossel contínuo de palestrantes">
         {/* Fileira 1 — Rolagem contínua para esquerda */}
-        <div className={styles.marqueeRow}>
-          <div className={`${styles.marqueeTrack} ${styles.scrollLeft}`}>
-            {[...row1, ...row1].map((speaker, index) => (
-              <div key={`${speaker.id}-r1-${index}`} className={styles.cardWrapper}>
-                <SpeakerCard
-                  speaker={speaker}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+        <CarouselRow
+          speakers={row1}
+          direction="left"
+          rowId="fileira-1"
+          speed={0.6}
+        />
 
         {/* Fileira 2 — Rolagem contínua para direita */}
-        <div className={styles.marqueeRow}>
-          <div className={`${styles.marqueeTrack} ${styles.scrollRight}`}>
-            {[...row2, ...row2].map((speaker, index) => (
-              <div key={`${speaker.id}-r2-${index}`} className={styles.cardWrapper}>
-                <SpeakerCard
-                  speaker={speaker}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+        <CarouselRow
+          speakers={row2}
+          direction="right"
+          rowId="fileira-2"
+          speed={0.6}
+        />
       </div>
     </section>
   );

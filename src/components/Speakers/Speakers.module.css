@@ -82,18 +82,85 @@
   gap: var(--space-6);
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-  overflow: hidden;
   position: relative;
-  mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 4%, black 96%, transparent);
   padding-block: var(--space-3);
+}
+
+.rowWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid var(--color-border);
+  color: var(--color-graphite);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.navButton:hover {
+  background: var(--color-green);
+  border-color: var(--color-green);
+  color: var(--color-white);
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 6px 20px rgba(0, 166, 80, 0.35);
+}
+
+.navButton:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.navButtonPrev {
+  left: var(--space-3);
+}
+
+.navButtonNext {
+  right: var(--space-3);
+}
+
+@media (min-width: 1280px) {
+  .navButtonPrev {
+    left: max(var(--space-6), calc((100vw - var(--container-max)) / 2));
+  }
+
+  .navButtonNext {
+    right: max(var(--space-6), calc((100vw - var(--container-max)) / 2));
+  }
 }
 
 .marqueeRow {
   display: flex;
   width: 100%;
-  overflow: hidden;
-  user-select: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+  user-select: text;
+  -webkit-user-select: text;
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  padding-block: var(--space-2);
+}
+
+.marqueeRow::-webkit-scrollbar {
+  display: none;
 }
 
 .marqueeTrack {
@@ -101,18 +168,6 @@
   gap: var(--space-6);
   width: max-content;
   will-change: transform;
-}
-
-.scrollLeft {
-  animation: scrollLeftMarquee 55s linear infinite;
-}
-
-.scrollRight {
-  animation: scrollRightMarquee 55s linear infinite;
-}
-
-.marqueeRow:hover .marqueeTrack {
-  animation-play-state: paused;
 }
 
 .cardWrapper {
@@ -127,59 +182,34 @@
   }
 }
 
-@keyframes scrollLeftMarquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes scrollRightMarquee {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
 /* ── Mobile Touch Drag / Scroll ── */
 @media (max-width: 768px) {
   .carouselsContainer {
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     gap: var(--space-4);
-    mask-image: none;
-    -webkit-mask-image: none;
     padding-inline: 0;
   }
 
   .marqueeRow {
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    mask-image: none;
+    -webkit-mask-image: none;
     padding-inline: var(--container-pad);
-    cursor: grab;
     touch-action: pan-x pan-y;
   }
 
-  .marqueeRow::-webkit-scrollbar {
-    display: none;
-  }
-
   .marqueeTrack {
-    animation: none !important;
     gap: var(--space-4);
   }
 
   .cardWrapper {
     flex: 0 0 280px;
     width: 280px;
-    scroll-snap-align: start;
+  }
+
+  .navButton {
+    width: 38px;
+    height: 38px;
   }
 }
 
@@ -195,6 +225,13 @@
   cursor: default;
   transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
   position: relative;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.card * {
+  user-select: text;
+  -webkit-user-select: text;
 }
 
 .card:hover {
