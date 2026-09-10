@@ -63,6 +63,7 @@ interface CarouselRowProps {
 function CarouselRow({ speakers, direction, rowId, speed = 0.6 }: CarouselRowProps) {
   const rowRef = useRef<HTMLDivElement>(null);
   const isPausedRef = useRef(false);
+  const pauseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const animationFrameRef = useRef<number | null>(null);
 
   const displayItems = useMemo(() => {
@@ -90,17 +91,19 @@ function CarouselRow({ speakers, direction, rowId, speed = 0.6 }: CarouselRowPro
 
       if (!isPausedRef.current && container) {
         const oneThird = container.scrollWidth / 3;
-        const moveDistance = speed * 60 * delta;
+        if (oneThird > 0) {
+          const moveDistance = speed * 60 * delta;
 
-        if (direction === 'left') {
-          container.scrollLeft += moveDistance;
-          if (container.scrollLeft >= oneThird * 2) {
-            container.scrollLeft -= oneThird;
-          }
-        } else {
-          container.scrollLeft -= moveDistance;
-          if (container.scrollLeft <= 0) {
-            container.scrollLeft += oneThird;
+          if (direction === 'left') {
+            container.scrollLeft += moveDistance;
+            if (container.scrollLeft >= oneThird * 2) {
+              container.scrollLeft -= oneThird;
+            }
+          } else {
+            container.scrollLeft -= moveDistance;
+            if (container.scrollLeft <= 0) {
+              container.scrollLeft += oneThird;
+            }
           }
         }
       }
@@ -114,6 +117,9 @@ function CarouselRow({ speakers, direction, rowId, speed = 0.6 }: CarouselRowPro
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
+      if (pauseTimeoutRef.current) {
+        clearTimeout(pauseTimeoutRef.current);
+      }
     };
   }, [direction, speed, displayItems]);
 
@@ -121,10 +127,28 @@ function CarouselRow({ speakers, direction, rowId, speed = 0.6 }: CarouselRowPro
     const container = rowRef.current;
     if (!container) return;
 
+    // Pausar movimento contínuo temporariamente durante a navegação
+    isPausedRef.current = true;
+    if (pauseTimeoutRef.current) {
+      clearTimeout(pauseTimeoutRef.current);
+    }
+    pauseTimeoutRef.current = setTimeout(() => {
+      isPausedRef.current = false;
+    }, 2500);
+
     const cardEl = container.querySelector(`.${styles.cardWrapper}`);
     const cardWidth = cardEl ? cardEl.clientWidth : 320;
     const gap = 24;
     const shift = (cardWidth + gap) * (navDir === 'next' ? 1 : -1);
+
+    const oneThird = container.scrollWidth / 3;
+    if (oneThird > 0) {
+      if (container.scrollLeft + shift < 0) {
+        container.scrollLeft += oneThird;
+      } else if (container.scrollLeft + shift > oneThird * 2) {
+        container.scrollLeft -= oneThird;
+      }
+    }
 
     container.scrollBy({
       left: shift,
