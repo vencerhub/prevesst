@@ -150,7 +150,7 @@ export function Schedule() {
             <circle cx="8" cy="5.5" r="0.75" fill="currentColor" />
           </svg>
           <span>
-            <strong>Intervalo para almoço:</strong> das 12h00 às 13h30 em ambos os dias (alimentação por conta do participante no campus ou entorno).
+            <strong>Intervalo para almoço:</strong> das 12h45 às 13h30 (Dia 01) e das 12h00 às 13h30 (Dia 02) — alimentação por conta do participante no campus ou entorno.
           </span>
         </div>
       </div>
