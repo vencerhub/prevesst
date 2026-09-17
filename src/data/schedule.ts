@@ -76,7 +76,7 @@ export const schedule: ScheduleDay[] = [
         title: 'Ruídos agravam ainda mais às ações dos FRPS ? Como devemos atenuar esses riscos',
         type: 'talk',
         speakerId: 'speaker-02',
-        speaker: 'Eng. de Produção Elétrica Rafael Nagi Cruz Gerges e Engº Ambiental Morvan Kaercher',
+        speaker: 'Eng. de Produção Elétrica Rafael Nagi Cruz Gerges e Engº Ambiental e de Segurança do Trabalho Morvan Kaercher',
         description: 'Análise sobre como o ruído no ambiente ocupacional intensifica os fatores de riscos psicossociais e métodos de atenuação.',
       },
       {

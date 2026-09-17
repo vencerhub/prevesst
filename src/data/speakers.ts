@@ -39,14 +39,14 @@ export const speakers: Speaker[] = [
   },
   {
     id: 'speaker-02b',
-    name: 'Engº Ambiental Morvan Kaercher',
-    role: 'Engenheiro Ambiental',
+    name: 'Engº Ambiental e de Segurança do Trabalho Morvan Kaercher',
+    role: 'Engenheiro Ambiental e de Segurança do Trabalho',
     institution: 'Palestrante Convidado',
     topic: 'Ruídos agravam ainda mais às ações dos FRPS ? Como devemos atenuar esses riscos',
     topicDay: 1,
-    bio: 'Engenheiro Ambiental especialista na avaliação e controle de impactos ocupacionais e ambientais do ruído e sua correlação com riscos psicossociais.',
+    bio: 'Engenheiro Ambiental e de Segurança do Trabalho especialista na avaliação e controle de impactos ocupacionais e ambientais do ruído e sua correlação com riscos psicossociais.',
     photo: '/images/speakers/2. Ruídos agravam ainda mais às  ações dos FRPS _ Como devemos atenuar esses riscos/Foto Morvan.jpg.jpeg',
-    tags: ['Ruído', 'FRPS', 'Engenharia Ambiental'],
+    tags: ['Ruído', 'FRPS', 'Segurança do Trabalho'],
   },
   {
     id: 'speaker-03',
