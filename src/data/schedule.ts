@@ -76,7 +76,7 @@ export const schedule: ScheduleDay[] = [
         title: 'Ruídos agravam ainda mais às ações dos FRPS ? Como devemos atenuar esses riscos',
         type: 'talk',
         speakerId: 'speaker-02',
-        speaker: 'Eng. de Produção Elétrica Rafael Nagi Cruz Gerges',
+        speaker: 'Eng. de Produção Elétrica Rafael Nagi Cruz Gerges e Engº Ambiental Morvan Kaercher',
         description: 'Análise sobre como o ruído no ambiente ocupacional intensifica os fatores de riscos psicossociais e métodos de atenuação.',
       },
       {
@@ -220,7 +220,7 @@ export const schedule: ScheduleDay[] = [
         title: 'O Nexo Causal Oculto: Qualidade do Ar Interior e a Responsabilidade Civil pelos Riscos Psicossociais',
         type: 'talk',
         speakerId: 'speaker-11',
-        speaker: 'JANAÍNA COSTA',
+        speaker: 'Bióloga Janaína Costa',
         description: 'Qualidade do ar de interiores, conforto ambiental e a responsabilidade civil pelos fatores de riscos psicossociais.',
       },
       {
