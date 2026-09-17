@@ -43,7 +43,7 @@ export const topicCategories = [
     color: 'dark',
     topics: [
       'Medicina do Trabalho',
-      'Ventilação',
+      'Qualidade do Ar Interior',
       'GRO — Gerenciamento de Riscos Ocupacionais',
       'Acidentes de Trabalho',
     ],
@@ -68,7 +68,7 @@ export const topics: Topic[] = [
   { id: 't-09', title: 'Equipamentos Móveis', category: 'cat-eng', description: 'Segurança operacional em empilhadeiras, pontes rolantes e demais equipamentos móveis.', day: 1 },
   { id: 't-10', title: 'Travamento de Fontes de Energia', category: 'cat-eng', description: 'Lockout/Tagout e procedimentos de controle de energias perigosas na prática.', day: 2 },
   { id: 't-11', title: 'Medicina do Trabalho', category: 'cat-health', description: 'Diagnóstico, nexo causal e intervenção clínica nos riscos psicossociais.', day: 2 },
-  { id: 't-12', title: 'Ventilação', category: 'cat-health', description: 'Como a qualidade do ar e o conforto ambiental interferem nos FRPS.', day: 2 },
+  { id: 't-12', title: 'Qualidade do Ar Interior', category: 'cat-health', description: 'O nexo causal entre qualidade do ar interior, riscos psicossociais e responsabilidade civil.', day: 2 },
   { id: 't-13', title: 'GRO — Gerenciamento de Riscos Ocupacionais', category: 'cat-health', description: 'Integração do GRO com normas específicas e gestão sistêmica de riscos.', day: 2 },
   { id: 't-14', title: 'Acidentes de Trabalho', category: 'cat-health', description: 'Investigação, análise de causas e papel dos FRPS nos acidentes ocupacionais.', day: 1 },
   { id: 't-15', title: 'Combate a Sinistros', category: 'cat-special', description: 'Estratégias e desafios operacionais para brigadas de emergência e bombeiros civis.', day: 2 },
