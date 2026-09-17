@@ -172,7 +172,7 @@ export const speakers: Speaker[] = [
   {
     id: 'speaker-11',
     name: 'Bióloga Janaína Costa',
-    role: 'Bióloga e Especialista em Higiene Ocupacional',
+    role: 'Bióloga e Especialista em qualidade do ar',
     institution: 'Palestrante Convidada',
     topic: 'O Nexo Causal Oculto: Qualidade do Ar Interior e a Responsabilidade Civil pelos Riscos Psicossociais',
     topicDay: 2,
