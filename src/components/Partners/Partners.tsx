@@ -74,6 +74,26 @@ export function Partners() {
             />
           </div>
         </div>
+
+        {/* PESQUISA DE SATISFAÇÃO CONFEA */}
+        <div className={styles.surveySection}>
+          <div className={styles.surveyCard}>
+            <div className={styles.surveyQrWrapper}>
+              <img
+                src="/images/logos/Qrcode.png"
+                alt="QR Code da Pesquisa de Satisfação CONFEA"
+                className={styles.surveyQr}
+              />
+            </div>
+            <div className={styles.surveyContent}>
+              <span className={styles.surveyBadge}>Patrocínio CONFEA</span>
+              <h3 className={styles.surveyTitle}>Pesquisa de Satisfação</h3>
+              <p className={styles.surveyDesc}>
+                Aponte a câmera do seu celular para o QR Code e participe da pesquisa de avaliação do Confea sobre o 24º PREVESST. Sua participação é fundamental!
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -60,6 +60,10 @@ export function Tickets() {
               <p className={styles.priceDetail}>
                 Entregues presencialmente no credenciamento do evento (01/10) na UCS CARVI.
               </p>
+              <div className={styles.socialNotice}>
+                <span className={styles.socialNoticeIcon} aria-hidden="true">🤝</span>
+                <span>Inscrição social para PCD, idosos e estudantes carentes (contrapartida)</span>
+              </div>
             </div>
 
             <div className={styles.divider} />

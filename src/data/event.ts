@@ -41,6 +41,7 @@ export const eventConfig = {
     member:
       'https://www.even3.com.br/tickets/get/24-prevesst-prevencao-seguranca-do-trabalho-e-fatores-de-riscos-psicossociais-773264?even3_orig=get_tickets',
     requirement: '3 kg de alimentos não perecíveis',
+    socialNotice: 'Inscrição social para PCD, idosos e estudantes carentes (contrapartida)',
     isSolidary: true,
   },
 

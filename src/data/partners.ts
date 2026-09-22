@@ -43,7 +43,7 @@ export const partners: Partner[] = [
     fullName: 'Conselho Federal de Engenharia e Agronomia — Confea',
     role: 'patrocinio',
     roleLabel: 'Patrocínio',
-    logo: '/images/logos/ConfeaCreaMutua_horizontal_cor-positivo.png',
+    logo: '/images/logos/Patrocinio.png',
     website: undefined,
     // ATENÇÃO: O Confea aparece EXCLUSIVAMENTE como patrocinador.
     // Não utilizar textos que caracterizem o Confea como organizador ou realizador.

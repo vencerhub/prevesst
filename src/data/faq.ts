@@ -9,7 +9,7 @@ export const faqItems: FAQItem[] = [
     id: 'faq-01',
     question: 'Quanto custa a inscrição para o 24º PREVESST?',
     answer:
-      'Mantendo a tradição das edições do PREVESST, a inscrição é solidária: consiste na entrega de 3 kg de alimentos não perecíveis no momento do credenciamento. Não há cobrança de taxa financeira, mas as vagas são estritamente limitadas a 150 participantes.',
+      'Mantendo a tradição das edições do PREVESST, a inscrição é solidária: consiste na entrega de 3 kg de alimentos não perecíveis no momento do credenciamento, com inscrição social para PCD, idosos e estudantes carentes (contrapartida). Não há cobrança de taxa financeira, mas as vagas são estritamente limitadas a 150 participantes.',
   },
   {
     id: 'faq-02',
