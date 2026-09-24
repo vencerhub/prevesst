@@ -16,15 +16,15 @@ export interface Speaker {
 
 export const speakers: Speaker[] = [
   {
-    id: 'speaker-01',
-    name: 'A definir',
-    role: 'Especialista em Relações do Trabalho',
-    institution: 'CNI — Confederação Nacional da Indústria',
-    topic: 'FRPS e Assédio no Trabalho: uma visão e procedimentos da CNI',
+    id: 'speaker-12',
+    name: 'Eng. Eletric. Jéferson Oliveira',
+    role: 'Engenheiro Eletricista e de Segurança',
+    institution: 'Palestrante Convidado',
+    topic: 'Nova NR 10: integração com GRO, NR 1 e demais NRs',
     topicDay: 1,
-    bio: 'Especialista convidado representando a Confederação Nacional da Indústria com foco em fatores de riscos psicossociais e diretrizes institucionais.',
-    photo: null,
-    tags: ['FRPS', 'Assédio', 'NR-1'],
+    bio: 'Engenheiro Eletricista e de Segurança do Trabalho, especialista nas revisões da NR-10 e articulação com o GRO/PGR.',
+    photo: '/images/speakers/13. Nova NR 10_ integração com GRO, NR 1 e demais NRs/Eng. Eletric. Jéferson Oliveira.jpeg',
+    tags: ['NR-10', 'GRO', 'NR-1'],
   },
   {
     id: 'speaker-02',
@@ -179,17 +179,6 @@ export const speakers: Speaker[] = [
     bio: 'Bióloga com foco em qualidade do ar de interiores, conforto ambiental, controle biológico e a responsabilidade civil pelos fatores de riscos psicossociais.',
     photo: '/images/speakers/11. O Nexo Causal Oculto Qualidade do Ar Interior e a Responsabilidade Civil pelos Riscos Psicossociais/biologa JANAÍNA COSTA.jpeg',
     tags: ['Qualidade do Ar', 'FRPS', 'Responsabilidade Civil'],
-  },
-  {
-    id: 'speaker-12',
-    name: 'Eng. Eletric. Jéferson Oliveira',
-    role: 'Engenheiro Eletricista e de Segurança',
-    institution: 'Palestrante Convidado',
-    topic: 'Nova NR 10: integração com GRO, NR 1 e demais NRs',
-    topicDay: 2,
-    bio: 'Engenheiro Eletricista e de Segurança do Trabalho, especialista nas revisões da NR-10 e articulação com o GRO/PGR.',
-    photo: '/images/speakers/13. Nova NR 10_ integração com GRO, NR 1 e demais NRs/Eng. Eletric. Jéferson Oliveira.jpeg',
-    tags: ['NR-10', 'GRO', 'NR-1'],
   },
   {
     id: 'speaker-13',
