@@ -72,7 +72,7 @@ export const eventConfig = {
         'Olá! Vim pelo site do 24º PREVESST e gostaria de mais informações sobre o evento.',
     },
     instagram: 'https://www.instagram.com/ares.poa',
-    email: '24prevesst@gmail.com',
+    email: '24prevesst2026@gmail.com',
   },
 
   social: {
