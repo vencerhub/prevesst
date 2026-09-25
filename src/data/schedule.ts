@@ -167,7 +167,7 @@ export const schedule: ScheduleDay[] = [
         title: 'Travamento de Fontes de Energias',
         type: 'talk',
         speakerId: 'speaker-08',
-        speaker: 'Engº Ricardo Alberto Fernández, Lisiane Frydrych e Victor Lopes Santos',
+        speaker: 'Engº Ricardo Alberto Fernández',
         description: 'Procedimentos de Lockout/Tagout e controle de energias perigosas: boas práticas, falhas comuns e conformidade normativa.',
       },
       {
