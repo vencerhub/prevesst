@@ -2,12 +2,6 @@ import { eventConfig } from '../../data/event';
 import styles from './Hero.module.css';
 
 export function Hero() {
-  const handleRegistration = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const el = document.getElementById('ingressos');
-    el?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   const handleScheduleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     const el = document.getElementById('programacao');
@@ -65,16 +59,8 @@ export function Hero() {
             {/* Ações / CTAs */}
             <div className={styles.actionsGroup}>
               <a
-                href="#ingressos"
-                className="btn btn--primary btn--lg"
-                onClick={handleRegistration}
-                aria-label="Garantir minha vaga no 24º PREVESST"
-              >
-                Garantir Minha Vaga
-              </a>
-              <a
                 href="#programacao"
-                className="btn btn--outline btn--lg"
+                className="btn btn--primary btn--lg"
                 onClick={handleScheduleClick}
                 aria-label="Ver programação completa do evento"
               >
@@ -82,7 +68,7 @@ export function Hero() {
               </a>
             </div>
 
-            {/* Microcopy de Confiança e Vagas */}
+            {/* Microcopy de Confiança e Local */}
             <div className={styles.microNotes}>
               <div className={styles.microItem}>
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
@@ -97,7 +83,7 @@ export function Hero() {
                   <circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1.5" />
                   <path d="M8 5v3.5l2 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
-                <span>150 vagas presenciais (Inscrição Solidária)</span>
+                <span>Edição Realizada com Sucesso</span>
               </div>
             </div>
           </div>

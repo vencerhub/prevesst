@@ -1,15 +1,15 @@
 import { useEffect, useRef } from 'react';
 import { type Speaker } from '../../data/speakers';
-import { eventConfig } from '../../data/event';
+import { ArgentinaFlag } from '../common/ArgentinaFlag';
 import styles from './SpeakerModal.module.css';
 
 interface Props {
   speaker: Speaker;
   onClose: () => void;
-  onRegistration: (e: React.MouseEvent) => void;
+  onRegistration?: (e: React.MouseEvent) => void;
 }
 
-export function SpeakerModal({ speaker, onClose, onRegistration }: Props) {
+export function SpeakerModal({ speaker, onClose }: Props) {
   const closeBtnRef = useRef<HTMLButtonElement>(null);
   const modalRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
@@ -88,7 +88,15 @@ export function SpeakerModal({ speaker, onClose, onRegistration }: Props) {
                 <span key={tag} className="badge badge--red">{tag}</span>
               ))}
             </div>
-            <h2 id="modal-speaker-name" className={styles.name}>{speaker.name}</h2>
+            <div className={styles.nameGroup}>
+              <h2 id="modal-speaker-name" className={styles.name}>{speaker.name}</h2>
+              {(speaker.country === 'Argentina' || speaker.nationality === 'Argentino' || speaker.id === 'speaker-08') && (
+                <span className={styles.nationalityBadge} title="Palestrante Argentino">
+                  <ArgentinaFlag width={18} height={12} />
+                  <span>ARGENTINO</span>
+                </span>
+              )}
+            </div>
             <p className={styles.role}>{speaker.role}</p>
             <p className={styles.institution}>{speaker.institution}</p>
           </div>
@@ -123,16 +131,7 @@ export function SpeakerModal({ speaker, onClose, onRegistration }: Props) {
 
         {/* Footer */}
         <div className={styles.footer}>
-          <a
-            href={eventConfig.registration.general}
-            target={eventConfig.registration.general.startsWith('http') ? '_blank' : undefined}
-            rel={eventConfig.registration.general.startsWith('http') ? 'noopener noreferrer' : undefined}
-            className="btn btn--primary"
-            onClick={onRegistration}
-          >
-            Garantir minha vaga
-          </a>
-          <button className="btn btn--outline-dark" onClick={onClose}>
+          <button className="btn btn--primary" onClick={onClose} style={{ minWidth: 120 }}>
             Fechar
           </button>
         </div>

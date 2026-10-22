@@ -213,6 +213,12 @@
   color: var(--color-green);
 }
 
+.speakerFlag {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 2px;
+}
+
 .sessionDesc {
   display: none;
 }

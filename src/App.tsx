@@ -16,7 +16,6 @@ import { FAQ } from './components/FAQ/FAQ';
 import { FinalCTA } from './components/FinalCTA/FinalCTA';
 import { Footer } from './components/Footer/Footer';
 import { WhatsAppButton } from './components/WhatsAppButton/WhatsAppButton';
-import { MobileStickyCTA } from './components/MobileStickyCTA/MobileStickyCTA';
 
 function App() {
   return (
@@ -46,7 +45,6 @@ function App() {
 
       <Footer />
       <WhatsAppButton />
-      <MobileStickyCTA />
     </>
   );
 }

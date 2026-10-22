@@ -1,5 +1,4 @@
 import { useRevealOnScroll } from '../../hooks/useRevealOnScroll';
-import { eventConfig } from '../../data/event';
 import styles from './Tickets.module.css';
 
 const sharedBenefits = [
@@ -22,14 +21,6 @@ function CheckIcon() {
 export function Tickets() {
   const ref = useRevealOnScroll<HTMLElement>();
 
-  const handleRegistrationClick = (e: React.MouseEvent) => {
-    if ((eventConfig.registration.general as string).startsWith('#')) {
-      e.preventDefault();
-      const whatsappUrl = `https://wa.me/${eventConfig.contact.whatsapp.number}?text=${encodeURIComponent('Olá! Gostaria de realizar minha inscrição solidária para o 24º PREVESST em Bento Gonçalves.')}`;
-      window.open(whatsappUrl, '_blank');
-    }
-  };
-
   return (
     <section
       id="ingressos"
@@ -39,12 +30,12 @@ export function Tickets() {
     >
       <div className="container">
         <div className={`${styles.header} reveal`}>
-          <p className="eyebrow eyebrow--line">INSCRIÇÕES OFICIAIS</p>
+          <p className="eyebrow eyebrow--line">TRADIÇÃO SOLIDÁRIA · EVENTO REALIZADO</p>
           <h2 id="tickets-heading" className={styles.heading}>
-            Garanta sua vaga no <span className={styles.accent}>24º PREVESST</span>
+            Inscrições e Participação no <span className={styles.accent}>24º PREVESST</span>
           </h2>
           <p className={styles.lead}>
-            Inscrição solidária para todos os profissionais e estudantes do setor. Sem taxa financeira.
+            Inscrição solidária realizada para todos os profissionais e estudantes do setor. Sem taxa financeira.
           </p>
         </div>
 
@@ -52,7 +43,7 @@ export function Tickets() {
           <div className={`${styles.ticketCard} reveal`}>
             
             <div className={styles.cardTop}>
-              <div className={styles.tagSolidary}>TRADIÇÃO SOLIDÁRIA · INSCRIÇÃO ABERTA</div>
+              <div className={styles.tagSolidary}>TRADIÇÃO SOLIDÁRIA · EDIÇÃO CONCLUÍDA</div>
               <div className={styles.priceRow}>
                 <span className={styles.priceValue}>3 KG</span>
                 <span className={styles.priceUnit}>de alimentos não perecíveis</span>
@@ -69,7 +60,7 @@ export function Tickets() {
             <div className={styles.divider} />
 
             <div className={styles.cardBody}>
-              <h3 className={styles.benefitsTitle}>Tudo o que está incluso:</h3>
+              <h3 className={styles.benefitsTitle}>Tudo o que esteve incluso:</h3>
               <ul className={styles.benefitList} aria-label="Benefícios da inscrição solidária">
                 {sharedBenefits.map((b) => (
                   <li key={b} className={styles.benefitItem}>
@@ -81,20 +72,12 @@ export function Tickets() {
             </div>
 
             <div className={styles.cardAction}>
-              <a
-                href={eventConfig.registration.general}
-                target={eventConfig.registration.general.startsWith('http') ? '_blank' : undefined}
-                rel={eventConfig.registration.general.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="btn btn--primary btn--lg"
-                style={{ width: '100%', justifyContent: 'center' }}
-                onClick={handleRegistrationClick}
-                aria-label="Garantir minha vaga no 24º PREVESST"
-              >
-                Garantir Minha Vaga
-              </a>
-              <p className={styles.actionNote}>
-                ⚡ Vagas limitadas à capacidade de 150 participantes.
-              </p>
+              <div className={styles.closedStatus}>
+                <span className={styles.closedBadge}>Inscrições Encerradas</span>
+                <p className={styles.closedNote}>
+                  O 24º PREVESST foi realizado com sucesso nos dias 01 e 02 de outubro de 2026. Agradecemos a todos os participantes, palestrantes e apoiadores!
+                </p>
+              </div>
             </div>
 
           </div>

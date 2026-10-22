@@ -88,11 +88,32 @@
   gap: var(--space-1);
 }
 
+.nameGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
 .name {
   font-size: var(--text-xl);
   font-weight: var(--weight-bold);
   color: var(--color-graphite);
   line-height: var(--leading-tight);
+}
+
+.nationalityBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  font-weight: var(--weight-extrabold);
+  letter-spacing: 0.06em;
+  color: #0369a1;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  width: fit-content;
 }
 
 .role {

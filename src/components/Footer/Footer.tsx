@@ -9,7 +9,6 @@ const navLinks = [
   { href: '#palestrantes', label: 'Palestrantes' },
   { href: '#programacao', label: 'Programação' },
   { href: '#local', label: 'Local' },
-  { href: '#ingressos', label: 'Inscrição Solidária' },
   { href: '#faq', label: 'FAQ' },
 ];
 

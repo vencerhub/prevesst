@@ -1,6 +1,7 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { useRevealOnScroll } from '../../hooks/useRevealOnScroll';
 import { speakers, type Speaker } from '../../data/speakers';
+import { ArgentinaFlag } from '../common/ArgentinaFlag';
 import styles from './Speakers.module.css';
 
 function SpeakerCard({
@@ -39,7 +40,15 @@ function SpeakerCard({
             <span key={tag} className="badge badge--red">{tag}</span>
           ))}
         </div>
-        <h3 className={styles.name}>{speaker.name}</h3>
+        <div className={styles.nameGroup}>
+          <h3 className={styles.name}>{speaker.name}</h3>
+          {(speaker.country === 'Argentina' || speaker.nationality === 'Argentino' || speaker.id === 'speaker-08') && (
+            <span className={styles.nationalityBadge} title="Palestrante Argentino">
+              <ArgentinaFlag width={18} height={12} />
+              <span>ARGENTINO</span>
+            </span>
+          )}
+        </div>
         <p className={styles.role}>{speaker.role}</p>
         <p className={styles.institution}>{speaker.institution}</p>
       </div>

@@ -1,10 +1,9 @@
-import { eventConfig } from '../../data/event';
 import styles from './FinalCTA.module.css';
 
 export function FinalCTA() {
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    document.getElementById('ingressos')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('programacao')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -16,10 +15,10 @@ export function FinalCTA() {
             24º PREVESST · OUTUBRO 2026
           </p>
           <h2 id="final-cta-heading" className={styles.heading}>
-            Dois dias para atualizar conhecimento, trocar experiências e fortalecer a cultura de prevenção.
+            Dois dias de atualização técnica, troca de experiências e fortalecimento da cultura de prevenção.
           </h2>
           <p className={styles.sub}>
-            Participe do maior encontro de SST do Rio Grande do Sul na Serra Gaúcha.
+            O maior encontro de SST do Rio Grande do Sul realizado na Serra Gaúcha.
           </p>
         </div>
 
@@ -30,18 +29,18 @@ export function FinalCTA() {
               <span className={styles.metaLbl}>Bento Gonçalves / RS</span>
             </div>
             <div className={styles.metaItem}>
-              <span className={styles.metaVal}>150 VAGAS</span>
-              <span className={styles.metaLbl}>Inscrição Solidária (3 kg)</span>
+              <span className={styles.metaVal}>REALIZADO</span>
+              <span className={styles.metaLbl}>Edição Concluída</span>
             </div>
           </div>
 
           <a
-            href={eventConfig.registration.general}
+            href="#programacao"
             className="btn btn--primary btn--lg"
             onClick={handleClick}
-            aria-label="Garantir minha vaga no 24º PREVESST"
+            aria-label="Ver programação do 24º PREVESST"
           >
-            Garantir Minha Vaga
+            Ver Programação
           </a>
         </div>
       </div>

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useScrollHeader } from '../../hooks/useScrollHeader';
-import { eventConfig } from '../../data/event';
 import styles from './Header.module.css';
 
 const navLinks = [
@@ -9,7 +8,6 @@ const navLinks = [
   { href: '#palestrantes', label: 'Palestrantes' },
   { href: '#programacao', label: 'Programação' },
   { href: '#local', label: 'Local' },
-  { href: '#ingressos', label: 'Inscrição' },
   { href: '#faq', label: 'FAQ' },
 ];
 
@@ -37,15 +35,6 @@ export function Header() {
     e.preventDefault();
     setMenuOpen(false);
     const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const handleCtaClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    setMenuOpen(false);
-    const target = document.querySelector('#ingressos');
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
     }
@@ -83,12 +72,12 @@ export function Header() {
         {/* CTA Desktop */}
         <div className={styles.ctaWrapper}>
           <a
-            href={eventConfig.registration.general}
+            href="#programacao"
             className="btn btn--primary btn--sm"
-            onClick={handleCtaClick}
-            aria-label="Garantir minha vaga no 24º PREVESST"
+            onClick={(e) => handleNavClick(e, '#programacao')}
+            aria-label="Ver programação do 24º PREVESST"
           >
-            Garantir Minha Vaga
+            Programação
           </a>
         </div>
 
@@ -146,15 +135,15 @@ export function Header() {
 
           <div className={styles.drawerCta}>
             <a
-              href={eventConfig.registration.general}
+              href="#programacao"
               className="btn btn--primary btn--lg"
               style={{ width: '100%', justifyContent: 'center' }}
-              onClick={handleCtaClick}
+              onClick={(e) => handleNavClick(e, '#programacao')}
             >
-              Garantir Minha Vaga
+              Ver Programação
             </a>
             <p className={styles.drawerMeta}>
-              150 vagas · Bento Gonçalves/RS
+              Edição Concluída · Bento Gonçalves/RS
             </p>
           </div>
         </nav>

@@ -14,6 +14,8 @@ export interface ScheduleSession {
   type: SessionType;
   speakerId?: string; // referência ao id em speakers.ts
   speaker?: string;
+  speakerCountry?: string;
+  speakerNationality?: string;
   description?: string;
 }
 
@@ -167,8 +169,10 @@ export const schedule: ScheduleDay[] = [
         title: 'Travamento de Fontes de Energias',
         type: 'talk',
         speakerId: 'speaker-08',
-        speaker: 'Engº Ricardo Alberto Fernández',
-        description: 'Procedimentos de Lockout/Tagout e controle de energias perigosas: boas práticas, falhas comuns e conformidade normativa.',
+        speaker: 'Engº Ricardo Alberto Fernández (Argentino)',
+        speakerCountry: 'Argentina',
+        speakerNationality: 'Argentino',
+        description: 'Palestrante internacional da Argentina. Procedimentos de Lockout/Tagout e controle de energias perigosas: boas práticas, falhas comuns e conformidade normativa.',
       },
       {
         id: 'd2-03',

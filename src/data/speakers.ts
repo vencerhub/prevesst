@@ -12,6 +12,8 @@ export interface Speaker {
   bio: string;
   photo: string | null;
   tags: string[];
+  country?: string;
+  nationality?: string;
 }
 
 export const speakers: Speaker[] = [
@@ -118,12 +120,14 @@ export const speakers: Speaker[] = [
     id: 'speaker-08',
     name: 'Engº Ricardo Alberto Fernández',
     role: 'Engº de Segurança do Trabalho e de Produção',
-    institution: 'Palestrante Convidado',
+    institution: 'Palestrante Convidado · Argentina',
+    country: 'Argentina',
+    nationality: 'Argentino',
     topic: 'Travamento de Fontes de Energias',
     topicDay: 2,
-    bio: 'Engenheiro de Segurança do Trabalho e de Produção, especialista internacional em procedimentos de isolamento e travamento de energias perigosas (Lockout/Tagout).',
+    bio: 'Engenheiro de Segurança do Trabalho e de Produção argentino, especialista internacional em procedimentos de isolamento e travamento de energias perigosas (Lockout/Tagout).',
     photo: '/images/speakers/08. Travamento de Fontes de Energias/Engº Ricardo Alberto Fernández.png',
-    tags: ['Lockout/Tagout', 'Energia', 'Prevenção'],
+    tags: ['Argentina', 'Lockout/Tagout', 'Energia'],
   },
   {
     id: 'speaker-09',

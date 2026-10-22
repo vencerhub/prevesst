@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { schedule, type ScheduleSession, type SessionType } from '../../data/schedule';
+import { ArgentinaFlag } from '../common/ArgentinaFlag';
 import styles from './Schedule.module.css';
 
 function sessionTypeClass(type: SessionType): string {
@@ -58,6 +59,11 @@ function SessionRow({ session }: { session: ScheduleSession }) {
               <path d="M2 14c0-2.5 2.5-4 6-4s6 1.5 6 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
             <span>{session.speaker}</span>
+            {(session.speakerCountry === 'Argentina' || session.speakerNationality === 'Argentino' || session.speakerId === 'speaker-08') && (
+              <span className={styles.speakerFlag} title="Palestrante Argentino">
+                <ArgentinaFlag width={18} height={12} />
+              </span>
+            )}
           </div>
         )}
 
